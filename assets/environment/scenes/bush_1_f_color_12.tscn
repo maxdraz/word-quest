@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://devuf7uns2iig"]
+
+[ext_resource type="PackedScene" uid="uid://cnhkvw7ovu5b5" path="res://assets/environment/models/Bush_1_F_Color1.gltf" id="1_dny6p"]
+
+[node name="Bush_1_F_Color12" unique_id=528895032 instance=ExtResource("1_dny6p")]

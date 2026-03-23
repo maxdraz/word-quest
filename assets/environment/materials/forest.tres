@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://xxolm8oi8ecg"]
-
-[ext_resource type="Texture2D" uid="uid://n0wvbe7pfo0h" path="res://assets/environment/textures/forest_texture.png" id="1_rjqbr"]
-
-[resource]
-resource_name = "forest"
-albedo_texture = ExtResource("1_rjqbr")
-roughness = 0.6

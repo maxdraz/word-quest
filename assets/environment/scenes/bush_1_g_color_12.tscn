@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://byohoas2makle"]
+
+[ext_resource type="PackedScene" uid="uid://da3itxyvps0fm" path="res://assets/environment/models/Bush_1_G_Color1.gltf" id="1_t5p07"]
+
+[node name="Bush_1_G_Color12" unique_id=1726213670 instance=ExtResource("1_t5p07")]

@@ -11,7 +11,17 @@ config_version=5
 [application]
 
 config/name="word-quest"
+run/main_scene="uid://d2imlf2bqxi6s"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+
+[display]
+
+window/size/viewport_width=360
+window/size/viewport_height=640
+window/size/window_width_override=360
+window/size/window_height_override=640
+window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [physics]
 

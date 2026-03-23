@@ -1,3 +1,45 @@
 [gd_scene format=3 uid="uid://d2imlf2bqxi6s"]
 
+[ext_resource type="PackedScene" uid="uid://bjargm377e6vi" path="res://assets/environment/scenes/level_forest.tscn" id="1_db5cl"]
+[ext_resource type="PackedScene" uid="uid://cgpw33avvyaob" path="res://assets/characters/scenes/characters/knight.tscn" id="2_2d37k"]
+[ext_resource type="PackedScene" uid="uid://cf2c84ypbj6h2" path="res://assets/characters/scenes/characters/rogue.tscn" id="3_836ik"]
+[ext_resource type="PackedScene" uid="uid://dae80an42mfnp" path="res://assets/enemies/scenes/skeleton_golem.tscn" id="4_836ik"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ovvxc"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_db5cl"]
+sky_material = SubResource("ProceduralSkyMaterial_ovvxc")
+
+[sub_resource type="Environment" id="Environment_06ig3"]
+background_mode = 2
+sky = SubResource("Sky_db5cl")
+tonemap_mode = 2
+
 [node name="Main" type="Node" unique_id=984567385]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1764654897]
+environment = SubResource("Environment_06ig3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=476433312]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="LevelForest" parent="." unique_id=783786272 instance=ExtResource("1_db5cl")]
+
+[node name="Knight" parent="." unique_id=1298165964 instance=ExtResource("2_2d37k")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.90063405, 0, 0.7692151)
+
+[node name="Rogue" parent="." unique_id=1361485749 instance=ExtResource("3_836ik")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1, 0, 1)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=152646217]
+transform = Transform3D(0.8660254, -0.39263156, 0.3095813, -8.746814e-09, 0.6191625, 0.78526294, -0.5000001, -0.6800576, 0.5362104, 2, 9.193019, -0.7227764)
+projection = 1
+size = 17.279
+near = 0.001
+far = 100.0
+
+[node name="Skeleton_Golem" parent="." unique_id=363661274 instance=ExtResource("4_836ik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)

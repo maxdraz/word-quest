@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bjargm377e6vi"]
+
+[ext_resource type="PackedScene" uid="uid://qfufog3jjwx" path="res://assets/environment/scenes/tree_2_a_color_12.tscn" id="1_cl0r6"]
+[ext_resource type="PackedScene" uid="uid://2tpeccx6x0cu" path="res://assets/environment/scenes/tree_2_b_color_12.tscn" id="2_5mijr"]
+[ext_resource type="PackedScene" uid="uid://dc6dmv8xe6qlt" path="res://assets/environment/scenes/tree_2_c_color_12.tscn" id="3_bcjqf"]
+[ext_resource type="PackedScene" uid="uid://bi6r3kseio844" path="res://assets/environment/scenes/tree_2_d_color_12.tscn" id="4_j6mvu"]
+[ext_resource type="PackedScene" uid="uid://yw8cagnd8i26" path="res://assets/environment/scenes/bush_1_e_color_12.tscn" id="5_j6mvu"]
+[ext_resource type="PackedScene" uid="uid://devuf7uns2iig" path="res://assets/environment/scenes/bush_1_f_color_12.tscn" id="6_rwkch"]
+[ext_resource type="PackedScene" uid="uid://byohoas2makle" path="res://assets/environment/scenes/bush_1_g_color_12.tscn" id="7_3fk1n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ace7"]
+albedo_color = Color(0.4167599, 0.69, 0.23459998, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qjj4w"]
+material = SubResource("StandardMaterial3D_7ace7")
+size = Vector2(50, 50)
+
+[node name="LevelForest" type="Node3D" unique_id=783786272]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=431717775]
+mesh = SubResource("PlaneMesh_qjj4w")
+
+[node name="Tree_2_A_Color12" parent="." unique_id=682600656 instance=ExtResource("1_cl0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -4)
+
+[node name="Tree_2_B_Color12" parent="." unique_id=1021038188 instance=ExtResource("2_5mijr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -10)
+
+[node name="Tree_2_C_Color12" parent="." unique_id=685722012 instance=ExtResource("3_bcjqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -1)
+
+[node name="Tree_2_D_Color12" parent="." unique_id=828399725 instance=ExtResource("4_j6mvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.28746, 0, -7.2749767)
+
+[node name="Tree_2_D_Color15" parent="." unique_id=1786929407 instance=ExtResource("4_j6mvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2874599, 0, -11.274977)
+
+[node name="Tree_2_D_Color13" parent="." unique_id=1636210950 instance=ExtResource("4_j6mvu")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 2.7125401, 0, -11.274977)
+
+[node name="Tree_2_D_Color14" parent="." unique_id=1006840402 instance=ExtResource("4_j6mvu")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 5.71254, 0, -6.2749767)
+
+[node name="Bush_1_E_Color12" parent="." unique_id=1657219288 instance=ExtResource("5_j6mvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.941809, -2.3841858e-07, -3.3468447)
+
+[node name="Bush_1_F_Color12" parent="." unique_id=528895032 instance=ExtResource("6_rwkch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8406563, 0, -4.927017)
+
+[node name="Bush_1_G_Color12" parent="." unique_id=1726213670 instance=ExtResource("7_3fk1n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2976346, -2.3841858e-07, -6.6788435)
+
+[node name="Bush_1_F_Color13" parent="." unique_id=395719207 instance=ExtResource("6_rwkch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.680918, 0, -2.9790955)
+
+[node name="Bush_1_G_Color13" parent="." unique_id=423905636 instance=ExtResource("7_3fk1n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7145348, -2.3841858e-07, -0.9785323)
