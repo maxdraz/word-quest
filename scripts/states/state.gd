@@ -4,20 +4,20 @@ extends RefCounted
 signal exited(state: State)
 
 func enter() -> void:
-    pass
+	pass
 
 
 func process(delta) -> void:
-    pass
+	pass
 
 
 func physics_process(delta) -> void:
-    pass
+	pass
 
 
 func cancel() -> void:
-    pass
+	pass
 
 
 func exit() -> void:
-    exited.emit(self)
+	exited.emit(self)

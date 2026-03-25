@@ -1,6 +1,9 @@
+class_name RotateToCommand
 extends Command
 
 
-func execute(state_machine: StateMachine, target: Transform3D, look_dir: Vector3):
-    state_machine.clear_queue()
-    state_machine.enqueue(RotateToState
+func execute(state_machine: StateMachine, params: RotateToStateParams):    
+	state_machine.clear_queue()
+	var rotate_to_state = RotateToState.new()
+	rotate_to_state.init(params)
+	state_machine.enqueue(rotate_to_state)
