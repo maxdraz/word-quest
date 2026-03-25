@@ -13,6 +13,7 @@ config_version=5
 config/name="word-quest"
 run/main_scene="uid://d2imlf2bqxi6s"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+run/max_fps=60
 
 [display]
 

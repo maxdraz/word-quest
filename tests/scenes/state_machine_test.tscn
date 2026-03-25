@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cevmxdscevy7q"]
+
+[ext_resource type="Texture2D" uid="uid://3w0viwxom7fu" path="res://tests/assets/textures/texture_09.png" id="1_4dbta"]
+[ext_resource type="Script" uid="uid://d3b7nparuott7" path="res://tests/state_machine_test.gd" id="1_vgi3l"]
+[ext_resource type="Script" uid="uid://dbvwmbrgo7iir" path="res://scripts/mouse_event_detector.gd" id="4_dl8l8"]
+[ext_resource type="PackedScene" uid="uid://cjkkom4bh6d8y" path="res://prefabs/characters/character_knight.tscn" id="4_ti0wt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4dbta"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_vgi3l"]
+sky_material = SubResource("ProceduralSkyMaterial_4dbta")
+
+[sub_resource type="Environment" id="Environment_dl8l8"]
+background_mode = 2
+sky = SubResource("Sky_vgi3l")
+tonemap_mode = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4dbta"]
+size = Vector3(100, 0.001, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dl8l8"]
+albedo_texture = ExtResource("1_4dbta")
+metallic_specular = 0.0
+roughness = 0.0
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2dwag"]
+material = SubResource("StandardMaterial3D_dl8l8")
+size = Vector2(100, 100)
+
+[node name="StateMachineTest" type="Node3D" unique_id=206244827 node_paths=PackedStringArray("character", "mouse_event_detector")]
+script = ExtResource("1_vgi3l")
+character = NodePath("CharacterKnight")
+mouse_event_detector = NodePath("MouseEventDetector")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=155582349]
+environment = SubResource("Environment_dl8l8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1022426085]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=355263786]
+transform = Transform3D(0.86602545, -0.3160011, 0.38748324, 2.0668092e-09, 0.7749666, 0.63200223, -0.49999997, -0.5473301, 0.67114073, 6, 12, 3)
+projection = 1
+size = 25.031
+far = 163.08
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1844140082]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=494919532]
+shape = SubResource("BoxShape3D_4dbta")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1592410213]
+mesh = SubResource("PlaneMesh_2dwag")
+
+[node name="MouseEventDetector" type="Node3D" parent="." unique_id=2074853285]
+script = ExtResource("4_dl8l8")
+metadata/_custom_type_script = "uid://dbvwmbrgo7iir"
+
+[node name="CharacterKnight" parent="." unique_id=712261849 instance=ExtResource("4_ti0wt")]

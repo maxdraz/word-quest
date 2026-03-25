@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cjkkom4bh6d8y"]
+
+[ext_resource type="PackedScene" uid="uid://laktf74xxsxc" path="res://prefabs/characters/character.tscn" id="1_ccw20"]
+[ext_resource type="PackedScene" uid="uid://cgpw33avvyaob" path="res://assets/characters/scenes/knight.tscn" id="2_hfm5k"]
+
+[node name="CharacterKnight" unique_id=712261849 node_paths=PackedStringArray("animation_tree") instance=ExtResource("1_ccw20")]
+animation_tree = NodePath("Knight/AnimationTree")
+
+[node name="Knight" parent="." index="1" unique_id=1298165964 instance=ExtResource("2_hfm5k")]
