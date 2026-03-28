@@ -18,7 +18,7 @@ func on_world_click(result: Dictionary, button_index: int) -> void:
 		var params = RotateToStateParams.new()
 		params.to_rotate = character
 		params.look_dir = look_dir
-		params.duration = 0.25
+		params.duration = 0.5
 		rotate_to_command.execute(character.state_machine, params)
 	elif button_index == MOUSE_BUTTON_LEFT:
 		var click_pos = result.position

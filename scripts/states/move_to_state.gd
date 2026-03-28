@@ -1,6 +1,8 @@
 class_name MoveToState
 extends State
 
+const animation_speed_parameter := "parameters/StateMachine/Movement/blend_position"
+
 var params : MoveToStateParams
 var start_basis : Basis
 var target_basis : Basis
@@ -18,6 +20,12 @@ func init(params: MoveToStateParams) -> void:
 	movement_progress = 0
 	rotation_progress = 0
 
+
+func enter() -> void:
+	super.enter()
+	params.character.animation_tree.set(animation_speed_parameter, 1)
+
+
 func physics_process(delta) -> void:
 	# rotation
 	rotation_progress += delta / params.rotation_duration
@@ -28,6 +36,15 @@ func physics_process(delta) -> void:
 	movement_progress += delta / params.move_duration
 	var movement_progress_eased =  ease(movement_progress, -2)
 	params.character.global_position = start_position.lerp(params.target_position, movement_progress_eased)
-	if movement_progress >= 1:
+	if movement_progress >= 0.95:
 		exit()
-	
+
+
+func cancel() -> void:
+	super.cancel()
+	params.character.animation_tree.set(animation_speed_parameter, 0)
+
+
+func exit() -> void:
+	super.exit()
+	params.character.animation_tree.set(animation_speed_parameter, 0)
