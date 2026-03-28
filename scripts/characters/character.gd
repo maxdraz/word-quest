@@ -1,13 +1,13 @@
 class_name Character
-extends CharacterBody3D
+extends Node3D
 
 
+@export var animation_player : AnimationPlayer
 @export var animation_tree : AnimationTree
-var state_machine : StateMachine
+var state_machine := StateMachine.new()
 
 
 func init() -> void:
-	state_machine = StateMachine.new()
 	var idle_state = IdleState.new()
 	var params = IdleStateParams.new()
 	params.character = self
@@ -17,3 +17,8 @@ func init() -> void:
 
 func _physics_process(delta: float) -> void:
 	state_machine.physics_process(delta)
+
+
+func deal_damage():
+	print("damage_dealt")
+	pass

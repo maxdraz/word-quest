@@ -1,21 +1,5 @@
 [gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://dejoqmt8tb5xm"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jgo45"]
-animation = &"character_general/Throw"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p466i"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ke3tu"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_yyfj0"]
-states/Start/position = Vector2(201, 100)
-states/character_general_Throw/node = SubResource("AnimationNodeAnimation_jgo45")
-states/character_general_Throw/position = Vector2(487, 100)
-transitions = ["Start", "character_general_Throw", SubResource("AnimationNodeStateMachineTransition_p466i"), "character_general_Throw", "End", SubResource("AnimationNodeStateMachineTransition_ke3tu")]
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ke3tu"]
 animation = &"character_general/Idle_A"
 
@@ -34,27 +18,31 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_30k28")
 blend_point_1/pos = 1.0
 min_space = 0.0
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jgo45"]
+animation = &"character_general/Throw"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yyfj0"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kifpc"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p466i"]
 xfade_time = 0.25
+advance_mode = 2
 advance_condition = &"is_attack"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_30k28"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rnaui"]
 xfade_time = 0.25
 switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fiv36"]
-states/Attacking/node = SubResource("AnimationNodeStateMachine_yyfj0")
-states/Attacking/position = Vector2(610, 35)
 states/Movement/node = SubResource("AnimationNodeBlendSpace1D_jgo45")
 states/Movement/position = Vector2(487, 100)
-transitions = ["Start", "Movement", SubResource("AnimationNodeStateMachineTransition_yyfj0"), "Movement", "Attacking", SubResource("AnimationNodeStateMachineTransition_kifpc"), "Attacking", "Movement", SubResource("AnimationNodeStateMachineTransition_30k28")]
+states/character_general_Throw/node = SubResource("AnimationNodeAnimation_jgo45")
+states/character_general_Throw/position = Vector2(684, 92)
+transitions = ["Start", "Movement", SubResource("AnimationNodeStateMachineTransition_yyfj0"), "Movement", "character_general_Throw", SubResource("AnimationNodeStateMachineTransition_p466i"), "character_general_Throw", "Movement", SubResource("AnimationNodeStateMachineTransition_rnaui")]
 
 [resource]
-graph_offset = Vector2(-280.96854, 34.84677)
+graph_offset = Vector2(-269.98337, 283.95557)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_fiv36")
 nodes/StateMachine/position = Vector2(20, 380)
 node_connections = [&"output", 0, &"StateMachine"]

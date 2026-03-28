@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var character : Character
+@export var target : Character
 @export var mouse_event_detector : MouseEventDetector
 
 func _ready() -> void:
@@ -20,7 +21,7 @@ func on_world_click(result: Dictionary, button_index: int) -> void:
 		params.look_dir = look_dir
 		params.duration = 0.5
 		rotate_to_command.execute(character.state_machine, params)
-	elif button_index == MOUSE_BUTTON_LEFT:
+	elif button_index == MOUSE_BUTTON_MIDDLE:
 		var click_pos = result.position
 		var move_to_command = MoveToCommand.new()
 		var params = MoveToStateParams.new()
@@ -28,4 +29,11 @@ func on_world_click(result: Dictionary, button_index: int) -> void:
 		params.target_position = click_pos
 		params.rotation_duration = 0.2
 		params.move_duration = 0.5
-		move_to_command.execute(character.state_machine, params)
+		move_to_command.execute(character.state_machine, params)		
+	elif button_index == MOUSE_BUTTON_LEFT:
+		var attack_command := MeleeAttackCommand.new()
+		var params := AttackStateParams.new()
+		params.attacker = character
+		params.target = target
+		attack_command.execute(character.state_machine, params)
+		
