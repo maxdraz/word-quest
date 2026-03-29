@@ -5,6 +5,7 @@ extends Node3D
 @export var animation_player : AnimationPlayer
 @export var animation_tree : AnimationTree
 var state_machine := StateMachine.new()
+signal animation_finished
 
 
 func init() -> void:
@@ -22,3 +23,7 @@ func _physics_process(delta: float) -> void:
 func deal_damage():
 	print("damage_dealt")
 	pass
+
+
+func _animation_finished() -> void:
+	animation_finished.emit()

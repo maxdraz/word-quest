@@ -42,7 +42,6 @@ states/character_general_Throw/position = Vector2(684, 92)
 transitions = ["Start", "Movement", SubResource("AnimationNodeStateMachineTransition_yyfj0"), "Movement", "character_general_Throw", SubResource("AnimationNodeStateMachineTransition_p466i"), "character_general_Throw", "Movement", SubResource("AnimationNodeStateMachineTransition_rnaui")]
 
 [resource]
-graph_offset = Vector2(-269.98337, 283.95557)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_fiv36")
 nodes/StateMachine/position = Vector2(20, 380)
 node_connections = [&"output", 0, &"StateMachine"]

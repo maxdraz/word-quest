@@ -12,7 +12,7 @@ func init(params : AttackStateParams) -> void:
 
 func enter() -> void:
 	super.enter()
-	params.attacker.animation_player.animation_changed.connect(_on_animation_player_animation_finished)
+	params.attacker.animation_finished.connect(_on_animation_finished)
 	params.attacker.animation_tree.set(is_attack_parameter, true)
 
 
@@ -27,5 +27,5 @@ func exit() -> void:
 	params.attacker.animation_tree.set(is_attack_parameter, false)
 
 
-func _on_animation_player_animation_finished(_old: String, _new: String) -> void:
+func _on_animation_finished() -> void:
 	exit()

@@ -30,3 +30,11 @@ func execute(state_machine: StateMachine, params: AttackStateParams) -> void:
 	var return_to_original_pos_state = MoveToState.new()
 	return_to_original_pos_state.init(return_to_original_pos_params)
 	state_machine.enqueue(return_to_original_pos_state)
+	# rotate to target
+	var rotate_to_state_params = RotateToStateParams.new()
+	rotate_to_state_params.to_rotate = params.attacker
+	rotate_to_state_params.look_dir = -params.attacker.global_position.direction_to(target_pos)
+	rotate_to_state_params.duration = 0.25
+	var rotate_to_state = RotateToState.new()
+	rotate_to_state.init(rotate_to_state_params)
+	state_machine.enqueue(rotate_to_state)

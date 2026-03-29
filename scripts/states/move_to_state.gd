@@ -12,17 +12,17 @@ var movement_progress : float
 
 
 func init(params: MoveToStateParams) -> void:
-	self.params = params
+	self.params = params	
+
+
+func enter() -> void:
+	super.enter()
 	start_position = params.character.global_position
 	start_basis = params.character.basis
 	var look_dir = start_position.direction_to(params.target_position)
 	target_basis = params.character.transform.looking_at(params.character.global_position - look_dir).basis
 	movement_progress = 0
 	rotation_progress = 0
-
-
-func enter() -> void:
-	super.enter()
 	params.character.animation_tree.set(animation_speed_parameter, 1)
 
 
