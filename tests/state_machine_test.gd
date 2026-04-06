@@ -35,5 +35,6 @@ func on_world_click(result: Dictionary, button_index: int) -> void:
 		var params := AttackStateParams.new()
 		params.attacker = character
 		params.target = target
+		params.animation_parameter = "parameters/StateMachine/Attack/conditions/melee_1"
 		attack_command.execute(character.state_machine, params)
 		

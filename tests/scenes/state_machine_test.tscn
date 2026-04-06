@@ -67,4 +67,4 @@ metadata/_custom_type_script = "uid://dbvwmbrgo7iir"
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -1, 0, -17)
 
 [node name="Knight" parent="." unique_id=1298165964 instance=ExtResource("4_ti0wt")]
-transform = Transform3D(-0.25881916, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.25881916, 1, 0, 3)
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 1, 0, 3)

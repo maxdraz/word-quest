@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dkjsti7wa1pbp" path="res://assets/characters/models/rogue.glb" id="1_ggvu5"]
 [ext_resource type="Script" uid="uid://b430yj3si2vye" path="res://scripts/characters/character.gd" id="2_130e1"]
-[ext_resource type="AnimationLibrary" uid="uid://b3nl52k1juswr" path="res://assets/characters/animations/libraries/character_general.res" id="2_citvw"]
-[ext_resource type="AnimationNodeBlendTree" uid="uid://dejoqmt8tb5xm" path="res://assets/characters/animations/animation_trees/character_animation_tree.tres" id="4_wqnpr"]
+[ext_resource type="AnimationLibrary" uid="uid://b3nl52k1juswr" path="res://assets/characters/animations/libraries/character_medium_general.res" id="2_citvw"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://dejoqmt8tb5xm" path="res://assets/characters/animations/animation_trees/character_medium_animation_tree.tres" id="4_wqnpr"]
 
 [node name="Rogue" unique_id=1361485749 node_paths=PackedStringArray("animation_tree") instance=ExtResource("1_ggvu5")]
 script = ExtResource("2_130e1")
@@ -69,5 +69,7 @@ autoplay = &"character_general/Idle_B"
 [node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=946686606]
 tree_root = ExtResource("4_wqnpr")
 anim_player = NodePath("../AnimationPlayer")
-parameters/StateMachine/conditions/is_attack = false
+parameters/StateMachine/conditions/attack = false
+parameters/StateMachine/Attack/conditions/melee_1 = false
+parameters/StateMachine/Attack/conditions/melee_2 = false
 parameters/StateMachine/Movement/blend_position = 0.0

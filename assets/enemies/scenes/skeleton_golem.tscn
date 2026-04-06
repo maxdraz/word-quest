@@ -1,5 +1,54 @@
 [gd_scene format=3 uid="uid://dae80an42mfnp"]
 
 [ext_resource type="PackedScene" uid="uid://dk6um2eubqvgd" path="res://assets/enemies/models/Skeleton_Golem.glb" id="1_b3ieo"]
+[ext_resource type="AnimationLibrary" uid="uid://bjtb1x1p0d8r7" path="res://assets/characters/animations/libraries/character_large_combat_melee.res" id="2_3gjqw"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://dejoqmt8tb5xm" path="res://assets/characters/animations/animation_trees/character_medium_animation_tree.tres" id="2_w5rhs"]
+[ext_resource type="AnimationLibrary" uid="uid://bandh0vfjqpa4" path="res://assets/characters/animations/libraries/character_large_general.res" id="3_m3fg7"]
+[ext_resource type="AnimationLibrary" uid="uid://bh4e834u82g78" path="res://assets/characters/animations/libraries/character_large_movement_advanced.res" id="4_mx2l5"]
+[ext_resource type="AnimationLibrary" uid="uid://cyujq35fubayy" path="res://assets/characters/animations/libraries/character_large_simulation.res" id="5_yb777"]
+[ext_resource type="AnimationLibrary" uid="uid://ph3noohcxnn3" path="res://assets/characters/animations/libraries/character_large_special.res" id="6_7nexj"]
 
 [node name="Skeleton_Golem" unique_id=363661274 instance=ExtResource("1_b3ieo")]
+
+[node name="Skeleton3D" parent="Rig_Large" parent_id_path=PackedInt32Array(620820589) index="0" unique_id=1518291710]
+bones/1/position = Vector3(0, 0.95983857, 0)
+bones/1/rotation = Quaternion(2.255949e-10, 0.17319314, 2.5649072e-09, 0.9848879)
+bones/2/position = Vector3(-0.34189013, 0.22717452, 2.0398836e-08)
+bones/2/rotation = Quaternion(0.94679, -0.106437005, 0.29934296, 0.051514626)
+bones/3/rotation = Quaternion(0.35656473, -5.4381047e-08, 2.4085875e-07, 0.9342707)
+bones/4/rotation = Quaternion(-0.6128999, 0.038280852, -0.082084306, 0.7849525)
+bones/5/rotation = Quaternion(0.00018874476, 0.9201331, -0.39160573, -4.1430874e-05)
+bones/6/position = Vector3(0.34189013, 0.22717452, 2.7846536e-08)
+bones/6/rotation = Quaternion(0.97625697, 0.060139295, 0.044718944, 0.20323808)
+bones/7/rotation = Quaternion(0.38606462, 3.887788e-08, -2.8804902e-07, 0.9224718)
+bones/8/rotation = Quaternion(-0.5434468, -0.020576118, 0.06515546, 0.8366583)
+bones/9/rotation = Quaternion(-0.00014458763, 0.9202248, -0.3913903, 3.218181e-05)
+bones/10/rotation = Quaternion(0.028232738, -0.13047159, 0.006231665, 0.99103045)
+bones/11/rotation = Quaternion(2.7755574e-17, -1.1920201e-07, -2.3283064e-10, 1)
+bones/12/position = Vector3(0.88401353, 0.49826336, 1.604588e-07)
+bones/12/rotation = Quaternion(-0.53630614, 0.0005754586, -0.7652754, 0.35599002)
+bones/13/rotation = Quaternion(7.881494e-09, -5.7954086e-08, -0.54420954, 0.8389493)
+bones/15/rotation = Quaternion(-0.025542492, -0.31168377, 0.14376508, 0.9388996)
+bones/16/position = Vector3(6.060935e-08, 0.23070048, -0.13799977)
+bones/16/rotation = Quaternion(-0.094399795, 0.10738043, -0.64511883, 0.75058645)
+bones/17/rotation = Quaternion(0.05596485, -0.035059966, 0.0037994627, 0.9978098)
+bones/18/position = Vector3(-0.8840135, 0.49826312, 1.8061023e-07)
+bones/18/rotation = Quaternion(-0.60394996, -0.09815252, 0.68855584, 0.38923177)
+bones/19/rotation = Quaternion(4.3554383e-08, 4.2412623e-08, 0.5501995, 0.83503324)
+bones/21/rotation = Quaternion(-0.027678039, 0.28841054, -0.07522256, 0.95414615)
+bones/22/position = Vector3(-1.0046796e-09, 0.2307003, -0.13799965)
+bones/22/rotation = Quaternion(-0.094399795, -0.107380465, 0.64511883, 0.7505864)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1663548943]
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=2025019202]
+libraries/character_large_combat_melee = ExtResource("2_3gjqw")
+libraries/character_large_general = ExtResource("3_m3fg7")
+libraries/character_large_movement_advanced = ExtResource("4_mx2l5")
+libraries/character_large_simulation = ExtResource("5_yb777")
+libraries/character_large_special = ExtResource("6_7nexj")
+tree_root = ExtResource("2_w5rhs")
+parameters/StateMachine/conditions/attack = false
+parameters/StateMachine/Attack/conditions/melee_1 = false
+parameters/StateMachine/Attack/conditions/melee_2 = false
+parameters/StateMachine/Movement/blend_position = 0.0
