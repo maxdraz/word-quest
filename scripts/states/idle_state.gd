@@ -9,7 +9,8 @@ func init(params):
 
 
 func enter() -> void:
-	params.character.animation_tree.set("parameters/Movement/blend_amount", 0)
+	params.character.animation_tree.set("parameters/Idle/blend_position", params.character.fighting_style)
+	params.character.animation_state_machine.travel("Idle")
 	pass
 
 

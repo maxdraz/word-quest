@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://3w0viwxom7fu" path="res://tests/assets/textures/texture_09.png" id="1_4dbta"]
 [ext_resource type="Script" uid="uid://d3b7nparuott7" path="res://tests/state_machine_test.gd" id="1_vgi3l"]
 [ext_resource type="Script" uid="uid://dbvwmbrgo7iir" path="res://scripts/mouse_event_detector.gd" id="4_dl8l8"]
-[ext_resource type="PackedScene" uid="uid://cgpw33avvyaob" path="res://assets/characters/scenes/knight.tscn" id="4_ti0wt"]
-[ext_resource type="PackedScene" uid="uid://cf2c84ypbj6h2" path="res://assets/characters/scenes/rogue.tscn" id="5_ti0wt"]
+[ext_resource type="PackedScene" uid="uid://cgpw33avvyaob" path="res://scenes/knight.tscn" id="4_ti0wt"]
+[ext_resource type="PackedScene" uid="uid://cf2c84ypbj6h2" path="res://scenes/rogue.tscn" id="5_ti0wt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4dbta"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -32,10 +32,9 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_dl8l8")
 size = Vector2(100, 100)
 
-[node name="StateMachineTest" type="Node3D" unique_id=206244827 node_paths=PackedStringArray("character", "target", "mouse_event_detector")]
+[node name="StateMachineTest" type="Node3D" unique_id=206244827 node_paths=PackedStringArray("character", "mouse_event_detector")]
 script = ExtResource("1_vgi3l")
 character = NodePath("Knight")
-target = NodePath("Rogue")
 mouse_event_detector = NodePath("MouseEventDetector")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=155582349]
@@ -63,8 +62,8 @@ mesh = SubResource("PlaneMesh_2dwag")
 script = ExtResource("4_dl8l8")
 metadata/_custom_type_script = "uid://dbvwmbrgo7iir"
 
-[node name="Rogue" parent="." unique_id=1361485749 instance=ExtResource("5_ti0wt")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -1, 0, -17)
-
 [node name="Knight" parent="." unique_id=1298165964 instance=ExtResource("4_ti0wt")]
 transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 1, 0, 3)
+
+[node name="Rogue" parent="." unique_id=1361485749 instance=ExtResource("5_ti0wt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -10)
