@@ -64,5 +64,4 @@ func attack(target: Character) -> void:
 	var params := AttackStateParams.new()
 	params.attacker = self
 	params.target = target
-	params.animation_parameter = "parameters/StateMachine/Attack/conditions/melee_1"
 	attack_command.execute(state_machine, params)

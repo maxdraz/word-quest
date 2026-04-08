@@ -11,14 +11,3 @@ func init(params):
 func enter() -> void:
 	params.character.animation_tree.set("parameters/Idle/blend_position", params.character.fighting_style)
 	params.character.animation_state_machine.travel("Idle")
-	pass
-
-
-func cancel() -> void:	
-	#params.character.animation_tree.set("parameters/StateMachine/conditions/is_idle", false)
-	pass
-
-
-func exit() -> void:	
-	#params.character.animation_tree.set("parameters/StateMachine/conditions/is_idle", false)
-	pass

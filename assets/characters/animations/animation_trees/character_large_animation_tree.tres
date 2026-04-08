@@ -1,5 +1,18 @@
 [gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://bny5t0jpsy7fj"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tk00y"]
+animation = &"character_large_combat_melee/Melee_2H_Slam"
+use_custom_timeline = true
+timeline_length = 0.1
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 1
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_y82eg"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_tk00y")
+blend_point_0/pos = 0.0
+min_space = 0.0
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_46ox0"]
 animation = &"character_large_general/Idle_B"
 
@@ -8,6 +21,36 @@ blend_point_0/node = SubResource("AnimationNodeAnimation_46ox0")
 blend_point_0/pos = 0.0
 min_space = 0.0
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2qvdj"]
+animation = &"character_large_general/Running_A"
+use_custom_timeline = true
+timeline_length = 0.2
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 1
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_x1iix"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_2qvdj")
+blend_point_0/pos = 0.0
+min_space = 0.0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_46ox0"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tk00y"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y82eg"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2qvdj"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x1iix"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yhgvw"]
+
 [resource]
+states/Attack/node = SubResource("AnimationNodeBlendSpace1D_y82eg")
+states/Attack/position = Vector2(496, 100)
 states/Idle/node = SubResource("AnimationNodeBlendSpace1D_tk00y")
-states/Idle/position = Vector2(367, 77)
+states/Idle/position = Vector2(332, 97)
+states/Run/node = SubResource("AnimationNodeBlendSpace1D_x1iix")
+states/Run/position = Vector2(414, 32)
+transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_46ox0"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_tk00y"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_y82eg"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_2qvdj"), "Run", "Attack", SubResource("AnimationNodeStateMachineTransition_x1iix"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_yhgvw")]
