@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d10hf8rlm60md"]
+
+[ext_resource type="PackedScene" uid="uid://di8ygmter4ei6" path="res://assets/equipment/sword_2handed_color.gltf" id="1_vp8i3"]
+
+[node name="Sword2H" unique_id=1769067423 instance=ExtResource("1_vp8i3")]

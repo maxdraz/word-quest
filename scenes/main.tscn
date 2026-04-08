@@ -1,45 +1,175 @@
-[gd_scene format=3 uid="uid://d2imlf2bqxi6s"]
+[gd_scene format=3 uid="uid://bwoubvlofldk8"]
 
-[ext_resource type="PackedScene" uid="uid://bjargm377e6vi" path="res://assets/environment/scenes/level_forest.tscn" id="1_db5cl"]
+[ext_resource type="Script" uid="uid://cmbit3be86ypd" path="res://scripts/game_manager.gd" id="1_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://cgpw33avvyaob" path="res://scenes/knight.tscn" id="2_2d37k"]
+[ext_resource type="AudioStream" uid="uid://dmkchgehclbda" path="res://assets/audio/music/09 - Battle 2.ogg" id="2_jbj1t"]
+[ext_resource type="Script" uid="uid://dbvwmbrgo7iir" path="res://scripts/mouse_event_detector.gd" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cf2c84ypbj6h2" path="res://scenes/rogue.tscn" id="3_836ik"]
 [ext_resource type="PackedScene" uid="uid://dae80an42mfnp" path="res://assets/enemies/scenes/skeleton_golem.tscn" id="4_836ik"]
+[ext_resource type="PackedScene" uid="uid://be1h4h5ume00" path="res://assets/environment/models/Color2/Rock_2_E_Color2.gltf" id="7_choun"]
+[ext_resource type="PackedScene" uid="uid://did1mq06hf4u1" path="res://assets/environment/models/Color2/Rock_2_F_Color2.gltf" id="8_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://dpi0jqg5kmp3t" path="res://assets/environment/models/Color2/Rock_2_G_Color2.gltf" id="9_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://dm4pjkhdf1guh" path="res://assets/environment/models/Color2/Hill_12x6x8_Color2.gltf" id="10_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://d1o3m3swad03u" path="res://assets/environment/models/Color2/Rock_2_H_Color2.gltf" id="10_trceg"]
+[ext_resource type="PackedScene" uid="uid://c76iwferlxpql" path="res://assets/environment/models/Color2/Grass_2_D_Color2.gltf" id="11_trceg"]
+[ext_resource type="PackedScene" uid="uid://c7eo87ekgnadm" path="res://assets/environment/models/Color2/Hill_Top_E_Center_Color2.gltf" id="12_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://dbx6j68334uvl" path="res://assets/environment/models/Color2/Grass_2_C_Singlesided_Color2.gltf" id="12_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://cm3f352f1tn0" path="res://assets/environment/models/Color2/Grass_2_D_Singlesided_Color2.gltf" id="13_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://vbqclyv3tpky" path="res://assets/audio/sfx/ambient/Forest Day.ogg" id="15_jkv2x"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ovvxc"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4dbta"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_db5cl"]
-sky_material = SubResource("ProceduralSkyMaterial_ovvxc")
+[sub_resource type="Sky" id="Sky_vgi3l"]
+sky_material = SubResource("ProceduralSkyMaterial_4dbta")
 
-[sub_resource type="Environment" id="Environment_06ig3"]
+[sub_resource type="Environment" id="Environment_dl8l8"]
 background_mode = 2
-sky = SubResource("Sky_db5cl")
+sky = SubResource("Sky_vgi3l")
 tonemap_mode = 2
 
-[node name="Main" type="Node" unique_id=984567385]
+[node name="Main" type="Node" unique_id=390658046]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1764654897]
-environment = SubResource("Environment_06ig3")
+[node name="Audio" type="Node" parent="." unique_id=945961415]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=476433312]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+[node name="ForestAmbientLoop" type="AudioStreamPlayer" parent="Audio" unique_id=319733501]
+stream = ExtResource("15_jkv2x")
+autoplay = true
+bus = &"Ambience"
+parameters/looping = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1267315000]
+stream = ExtResource("2_jbj1t")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="UI" type="Control" parent="." unique_id=1208741327]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="UI" unique_id=1612157506]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 40.0
+offset_right = 344.0
+offset_bottom = 80.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="UI" unique_id=411879593]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 584.0
+offset_right = 344.0
+offset_bottom = 624.0
+color = Color(0, 1, 0.16666651, 1)
+
+[node name="World" type="Node3D" parent="." unique_id=209785591]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=155582349]
+environment = SubResource("Environment_dl8l8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World" unique_id=1022426085]
+transform = Transform3D(0.9519211, 0.26530123, -0.15317172, 2.5393017e-08, 0.49999985, 0.8660253, 0.3063434, -0.8243878, 0.4759604, 0, 0, 0)
+light_energy = 0.395
 shadow_enabled = true
 
-[node name="LevelForest" parent="." unique_id=783786272 instance=ExtResource("1_db5cl")]
+[node name="LevelForest" type="Node3D" parent="World" unique_id=2146833391]
+
+[node name="Hill_12x6x8_Color22" parent="World/LevelForest" unique_id=1334102008 instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 1.7955551, 0, -23.447086)
+
+[node name="Hill_12x6x8_Color24" parent="World/LevelForest" unique_id=1501149196 instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1.0643376, 0, 1.0569699, 0, 1.5, 0, -1.0569699, 0, 1.0643376, -10.72816, 0, -20.489471)
+
+[node name="Hill_12x6x8_Color25" parent="World/LevelForest" unique_id=1952128772 instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1.13246855e-07, 0, 1.5, 0, 1.5, 0, -1.5, 0, 1.13246855e-07, -15.548709, 0, -8)
+
+[node name="Hill_Top_E_Center_Color22" parent="World/LevelForest" unique_id=794027088 instance=ExtResource("12_a8y0u")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -2.2000577, 0, -1.3685474)
+
+[node name="Rock_2_E_Color22" parent="World/LevelForest" unique_id=361595654 instance=ExtResource("7_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -18)
+
+[node name="Rock_2_F_Color22" parent="World/LevelForest" unique_id=729583541 instance=ExtResource("8_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -19)
+
+[node name="Rock_2_G_Color22" parent="World/LevelForest" unique_id=1897918327 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -20)
+
+[node name="Rock_2_E_Color23" parent="World/LevelForest" unique_id=2046336857 instance=ExtResource("7_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -18)
+
+[node name="Rock_2_H_Color22" parent="World/LevelForest" unique_id=1803486272 instance=ExtResource("10_trceg")]
+transform = Transform3D(0.8662435, 0, -0.49962205, 0, 1, 0, 0.49962205, 0, 0.8662435, -7.8343916, 0, -16.346931)
+
+[node name="Rock_2_G_Color23" parent="World/LevelForest" unique_id=2051122846 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -14)
+
+[node name="Rock_2_F_Color23" parent="World/LevelForest" unique_id=574052000 instance=ExtResource("8_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -15)
+
+[node name="Rock_2_G_Color24" parent="World/LevelForest" unique_id=583152855 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17)
+
+[node name="Grass_2_D_Color22" parent="World/LevelForest" unique_id=93354175 instance=ExtResource("11_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7723436, 0, -8.967731)
+
+[node name="Grass_2_D_Singlesided_Color22" parent="World/LevelForest" unique_id=694717524 instance=ExtResource("13_jbj1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9722567, 0, -3.1173143)
+
+[node name="Grass_2_D_Singlesided_Color23" parent="World/LevelForest" unique_id=710268446 instance=ExtResource("13_jbj1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3526397, 0, -12.169321)
+
+[node name="Grass_2_D_Color23" parent="World/LevelForest" unique_id=199688382 instance=ExtResource("11_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5045042, 0, 0.3960123)
+
+[node name="Grass_2_D_Singlesided_Color24" parent="World/LevelForest" unique_id=1424871592 instance=ExtResource("13_jbj1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.669037, 0, 4.5505633)
+
+[node name="Grass_2_C_Singlesided_Color23" parent="World/LevelForest" unique_id=368233470 instance=ExtResource("12_jkv2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.404292, 9.536743e-07, 8.752009)
+
+[node name="Rock_2_H_Color23" parent="World/LevelForest" unique_id=1387325056 instance=ExtResource("10_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.00032, -9.536743e-07, -11.74889)
+
+[node name="Rock_2_E_Color24" parent="World/LevelForest" unique_id=653044535 instance=ExtResource("7_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.257933, 0, -9.642677)
+
+[node name="Rock_2_H_Color24" parent="World/LevelForest" unique_id=357581322 instance=ExtResource("10_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.021385, 0, -17.846746)
+
+[node name="Rock_2_G_Color25" parent="World/LevelForest" unique_id=1731569092 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.678231, 0, -12.697914)
+
+[node name="Camera3D" type="Camera3D" parent="World" unique_id=355263786]
+transform = Transform3D(0.86602545, -0.31600112, 0.38748324, 2.0668092e-09, 0.7749666, 0.63200223, -0.49999997, -0.5473301, 0.67114073, 13.8634615, 24.825653, 16.619917)
+projection = 1
+current = true
+size = 25.031
+far = 150.0
+
+[node name="GameManager" type="Node" parent="." unique_id=463078308 node_paths=PackedStringArray("player_1", "player_2", "enemy")]
+script = ExtResource("1_a8y0u")
+player_1 = NodePath("../Knight")
+player_2 = NodePath("../Rogue")
+enemy = NodePath("../Skeleton_Golem")
+metadata/_custom_type_script = "uid://cmbit3be86ypd"
+
+[node name="MouseEventDetector" type="Node3D" parent="." unique_id=2074853285]
+script = ExtResource("2_tbgi4")
+metadata/_custom_type_script = "uid://dbvwmbrgo7iir"
 
 [node name="Knight" parent="." unique_id=1298165964 instance=ExtResource("2_2d37k")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.90063405, 0, 0.7692151)
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 1, 0, 3)
 
 [node name="Rogue" parent="." unique_id=1361485749 instance=ExtResource("3_836ik")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1, 0, 1)
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=152646217]
-transform = Transform3D(0.8660254, -0.39263156, 0.3095813, -8.746814e-09, 0.6191625, 0.78526294, -0.5000001, -0.6800576, 0.5362104, 2, 9.193019, -0.7227764)
-projection = 1
-size = 17.279
-near = 0.001
-far = 100.0
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5, 0, 3)
 
 [node name="Skeleton_Golem" parent="." unique_id=363661274 instance=ExtResource("4_836ik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -3, 0, -13)
+
+[editable path="World/LevelForest/Hill_Top_E_Center_Color22"]

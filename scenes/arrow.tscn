@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dssh3xc7art71"]
+
+[ext_resource type="PackedScene" uid="uid://lpig2v2fjkkf" path="res://assets/equipment/arrow_bow.gltf" id="1_umosx"]
+
+[node name="Arrow" unique_id=1127631282 instance=ExtResource("1_umosx")]

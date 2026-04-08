@@ -35,3 +35,34 @@ func deal_damage():
 
 func _animation_finished() -> void:
 	animation_finished.emit()
+
+
+func look_at_target(target: Node3D, instant:= false) -> void:
+	if instant:
+		look_at(-target.position)
+		return
+	
+	var look_dir = -position.direction_to(target.position)
+	look_dir.y = global_position.y
+	var rotate_to_command = RotateToCommand.new()
+	var params = RotateToStateParams.new()
+	params.to_rotate = self
+	params.look_dir = look_dir
+	params.duration = 0.5
+	rotate_to_command.execute(state_machine, params)
+
+
+func attack(target: Character) -> void:
+	var attack_command
+	match fighting_style:
+		FightingStyle.MELEE_1H:
+			attack_command = MeleeAttackCommand.new()
+		FightingStyle.RANGED_BOW:
+			attack_command = RangedAttackCommand.new()
+
+	
+	var params := AttackStateParams.new()
+	params.attacker = self
+	params.target = target
+	params.animation_parameter = "parameters/StateMachine/Attack/conditions/melee_1"
+	attack_command.execute(state_machine, params)

@@ -1,0 +1,13 @@
+[gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://bny5t0jpsy7fj"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_46ox0"]
+animation = &"character_large_general/Idle_B"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_tk00y"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_46ox0")
+blend_point_0/pos = 0.0
+min_space = 0.0
+
+[resource]
+states/Idle/node = SubResource("AnimationNodeBlendSpace1D_tk00y")
+states/Idle/position = Vector2(367, 77)

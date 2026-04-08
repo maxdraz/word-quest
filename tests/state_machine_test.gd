@@ -7,6 +7,7 @@ extends Node3D
 func _ready() -> void:
 	mouse_event_detector.world_click.connect(on_world_click)
 	character.init()
+	target.init()
 
 
 func on_world_click(result: Dictionary, button_index: int) -> void:

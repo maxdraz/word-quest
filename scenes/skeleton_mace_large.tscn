@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bupjyba5o0tmu"]
+
+[ext_resource type="PackedScene" uid="uid://crjgfir1o38bc" path="res://assets/equipment/Skeleton_Mace_Large.gltf" id="1_cga61"]
+
+[node name="SkeletonMaceLarge" unique_id=1204995472 instance=ExtResource("1_cga61")]

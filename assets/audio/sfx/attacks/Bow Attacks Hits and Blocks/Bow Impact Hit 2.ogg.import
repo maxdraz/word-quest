@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://diaxtrv5bs7gs"
+path="res://.godot/imported/Bow Impact Hit 2.ogg-d2b2fec3e7afccd02a6dbf767f0ff745.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/attacks/Bow Attacks Hits and Blocks/Bow Impact Hit 2.ogg"
+dest_files=["res://.godot/imported/Bow Impact Hit 2.ogg-d2b2fec3e7afccd02a6dbf767f0ff745.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
