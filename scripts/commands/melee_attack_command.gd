@@ -14,6 +14,7 @@ func execute(state_machine: StateMachine, params: AttackStateParams) -> void:
 	approach_target_state_params.target_position = destination
 	approach_target_state_params.move_duration = 0.5
 	approach_target_state_params.rotation_duration = 0.25
+	approach_target_state_params.stopping_distance = 2
 	var approach_target_state = MoveToState.new()
 	approach_target_state.init(approach_target_state_params)
 	state_machine.enqueue(approach_target_state)

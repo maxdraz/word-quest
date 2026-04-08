@@ -34,6 +34,7 @@ func physics_process(delta) -> void:
 	#movement
 	movement_progress += delta / params.move_duration
 	var movement_progress_eased =  ease(movement_progress, -2)
-	params.character.global_position = start_position.lerp(params.target_position, movement_progress_eased)
+	var arrive_offset = start_position.direction_to(params.target_position) * params.stopping_distance
+	params.character.global_position = start_position.lerp(params.target_position - arrive_offset, movement_progress_eased)
 	if movement_progress >= 0.95:
 		exit()

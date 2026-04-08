@@ -13,8 +13,16 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_00icb")
 blend_point_1/pos = 1.0
 min_space = 0.0
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0txvh"]
+animation = &"character_medium_general/Hit_B"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_0txvh"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_0txvh")
+blend_point_0/pos = 0.0
+min_space = 0.0
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6htur"]
-animation = &"character_general/Idle_B"
+animation = &"character_medium_general/Idle_B"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l85tn"]
 animation = &"character_medium_combat_ranged/Ranged_Bow_Idle"
@@ -27,7 +35,12 @@ blend_point_1/pos = 1.0
 min_space = 0.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_my7q3"]
-animation = &"character_general/Running_A"
+animation = &"character_medium_general/Running_B"
+use_custom_timeline = true
+timeline_length = 0.2
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j64aj"]
 animation = &"character_medium_movement_advanced/Running_HoldingBow"
@@ -57,12 +70,18 @@ xfade_time = 0.1
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ro5pm"]
 xfade_time = 0.1
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xfja3"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h0qk1"]
+
 [resource]
 states/Attack/node = SubResource("AnimationNodeBlendSpace1D_my7q3")
 states/Attack/position = Vector2(425, 26)
+states/Hurt/node = SubResource("AnimationNodeBlendSpace1D_0txvh")
+states/Hurt/position = Vector2(284, 24)
 states/Idle/node = SubResource("AnimationNodeBlendSpace1D_j64aj")
 states/Idle/position = Vector2(328, 100)
 states/Run/node = SubResource("AnimationNodeBlendSpace1D_j0x8k")
 states/Run/position = Vector2(491, 100)
-transitions = ["Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_vlxot"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_udk0l"), "Run", "Attack", SubResource("AnimationNodeStateMachineTransition_17da4"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_mgp55"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_62sh4"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_ro5pm")]
+transitions = ["Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_vlxot"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_udk0l"), "Run", "Attack", SubResource("AnimationNodeStateMachineTransition_17da4"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_mgp55"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_62sh4"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_ro5pm"), "Idle", "Hurt", SubResource("AnimationNodeStateMachineTransition_xfja3"), "Hurt", "Idle", SubResource("AnimationNodeStateMachineTransition_h0qk1")]
 graph_offset = Vector2(2, -31)

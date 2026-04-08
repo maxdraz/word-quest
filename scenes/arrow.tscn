@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://dssh3xc7art71"]
 
 [ext_resource type="PackedScene" uid="uid://lpig2v2fjkkf" path="res://assets/equipment/arrow_bow.gltf" id="1_umosx"]
+[ext_resource type="Script" uid="uid://c16vi0qjmi6i" path="res://scripts/weapons/projectile.gd" id="2_23jat"]
 
 [node name="Arrow" unique_id=1127631282 instance=ExtResource("1_umosx")]
+script = ExtResource("2_23jat")
+speed = 75.0
+
+[node name="arrow_bow" parent="." index="0" unique_id=1766445708]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

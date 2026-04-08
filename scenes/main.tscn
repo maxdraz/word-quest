@@ -15,7 +15,14 @@
 [ext_resource type="PackedScene" uid="uid://c7eo87ekgnadm" path="res://assets/environment/models/Color2/Hill_Top_E_Center_Color2.gltf" id="12_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://dbx6j68334uvl" path="res://assets/environment/models/Color2/Grass_2_C_Singlesided_Color2.gltf" id="12_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://cm3f352f1tn0" path="res://assets/environment/models/Color2/Grass_2_D_Singlesided_Color2.gltf" id="13_jbj1t"]
+[ext_resource type="Script" uid="uid://cwyfywsf5ywsj" path="res://scripts/combat/health.gd" id="13_muem4"]
 [ext_resource type="AudioStream" uid="uid://vbqclyv3tpky" path="res://assets/audio/sfx/ambient/Forest Day.ogg" id="15_jkv2x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbj1t"]
+bg_color = Color(0, 0.72187865, 0.29593423, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muem4"]
+bg_color = Color(0, 0.72156864, 0.29803923, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4dbta"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -51,21 +58,27 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="UI" unique_id=1612157506]
+[node name="HealthBarEneny" type="ProgressBar" parent="UI" unique_id=1365085017]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 40.0
 offset_right = 344.0
 offset_bottom = 80.0
-color = Color(1, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_jbj1t")
+max_value = 1.0
+value = 1.0
+show_percentage = false
 
-[node name="ColorRect2" type="ColorRect" parent="UI" unique_id=411879593]
+[node name="HealthBarPlayers" type="ProgressBar" parent="UI" unique_id=475679107]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 584.0
 offset_right = 344.0
 offset_bottom = 624.0
-color = Color(0, 1, 0.16666651, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_muem4")
+max_value = 1.0
+value = 1.0
+show_percentage = false
 
 [node name="World" type="Node3D" parent="." unique_id=209785591]
 
@@ -152,12 +165,19 @@ current = true
 size = 25.031
 far = 150.0
 
-[node name="GameManager" type="Node" parent="." unique_id=463078308 node_paths=PackedStringArray("player_1", "player_2", "enemy")]
+[node name="GameManager" type="Node" parent="." unique_id=463078308 node_paths=PackedStringArray("player_1", "player_2", "enemy", "health_players", "health_bar_players", "health_bar_enemy")]
 script = ExtResource("1_a8y0u")
 player_1 = NodePath("../Knight")
 player_2 = NodePath("../Rogue")
 enemy = NodePath("../Skeleton_Golem")
+health_players = NodePath("HealthPlayers")
+health_bar_players = NodePath("../UI/HealthBarPlayers")
+health_bar_enemy = NodePath("../UI/HealthBarEneny")
 metadata/_custom_type_script = "uid://cmbit3be86ypd"
+
+[node name="HealthPlayers" type="Node" parent="GameManager" unique_id=2043469362]
+script = ExtResource("13_muem4")
+metadata/_custom_type_script = "uid://cwyfywsf5ywsj"
 
 [node name="MouseEventDetector" type="Node3D" parent="." unique_id=2074853285]
 script = ExtResource("2_tbgi4")
@@ -171,5 +191,6 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5, 0
 
 [node name="Skeleton_Golem" parent="." unique_id=363661274 instance=ExtResource("4_836ik")]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -3, 0, -13)
+fighting_style = 0
 
 [editable path="World/LevelForest/Hill_Top_E_Center_Color22"]
