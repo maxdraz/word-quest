@@ -30,6 +30,7 @@ func init() -> void:
 
 func combat_loop():
 	while true:
+		await get_tree().create_timer(3.0).timeout
 		player_1.attack(enemy)
 		await get_tree().create_timer(3.0).timeout
 		player_2.attack(enemy)
@@ -39,7 +40,6 @@ func combat_loop():
 			enemy.attack(player_1)
 		else:
 			enemy.attack(player_2)
-		await get_tree().create_timer(3.0).timeout
 
 
 func _on_enemy_health_changed(previous: int, current: int, max: int) -> void:

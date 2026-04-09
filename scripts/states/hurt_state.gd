@@ -11,4 +11,9 @@ func init(params: HurtStateParams):
 
 func enter() -> void:
 	super.enter()
+	params.character.animation_finished.connect(_on_animation_finished)
 	params.character.animation_state_machine.travel("Hurt")
+
+
+func _on_animation_finished() -> void:
+	exit()
