@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c76iwferlxpql" path="res://assets/environment/models/Color2/Grass_2_D_Color2.gltf" id="11_trceg"]
 [ext_resource type="PackedScene" uid="uid://c7eo87ekgnadm" path="res://assets/environment/models/Color2/Hill_Top_E_Center_Color2.gltf" id="12_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://dbx6j68334uvl" path="res://assets/environment/models/Color2/Grass_2_C_Singlesided_Color2.gltf" id="12_jkv2x"]
+[ext_resource type="Resource" uid="uid://ce6ia2ly2sjhw" path="res://data/word_database.tres" id="13_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://cm3f352f1tn0" path="res://assets/environment/models/Color2/Grass_2_D_Singlesided_Color2.gltf" id="13_jbj1t"]
 [ext_resource type="Script" uid="uid://cwyfywsf5ywsj" path="res://scripts/combat/health.gd" id="13_muem4"]
 [ext_resource type="AudioStream" uid="uid://vbqclyv3tpky" path="res://assets/audio/sfx/ambient/Forest Day.ogg" id="15_jkv2x"]
@@ -79,6 +80,46 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_muem4")
 max_value = 1.0
 value = 1.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="UI" unique_id=1831371667]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 80.0
+offset_right = 288.0
+offset_bottom = 128.0
+text = "Word"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="UI" unique_id=97037535]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 312.0
+offset_right = 352.0
+offset_bottom = 360.0
+text = "Word"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="UI" unique_id=394379556]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 392.0
+offset_right = 360.0
+offset_bottom = 440.0
+text = "Word"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="UI" unique_id=1655624958]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 472.0
+offset_right = 344.0
+offset_bottom = 520.0
+text = "Word"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="World" type="Node3D" parent="." unique_id=209785591]
 
@@ -165,7 +206,7 @@ current = true
 size = 25.031
 far = 150.0
 
-[node name="GameManager" type="Node" parent="." unique_id=463078308 node_paths=PackedStringArray("player_1", "player_2", "enemy", "health_players", "health_bar_players", "health_bar_enemy")]
+[node name="GameManager" type="Node" parent="." unique_id=463078308 node_paths=PackedStringArray("player_1", "player_2", "enemy", "health_players", "health_bar_players", "health_bar_enemy", "labels")]
 script = ExtResource("1_a8y0u")
 player_1 = NodePath("../Knight")
 player_2 = NodePath("../Rogue")
@@ -173,6 +214,8 @@ enemy = NodePath("../Skeleton_Golem")
 health_players = NodePath("HealthPlayers")
 health_bar_players = NodePath("../UI/HealthBarPlayers")
 health_bar_enemy = NodePath("../UI/HealthBarEneny")
+word_database = ExtResource("13_dp3eg")
+labels = [NodePath("../UI/Label"), NodePath("../UI/Label2"), NodePath("../UI/Label3"), NodePath("../UI/Label4")]
 metadata/_custom_type_script = "uid://cmbit3be86ypd"
 
 [node name="HealthPlayers" type="Node" parent="GameManager" unique_id=2043469362]

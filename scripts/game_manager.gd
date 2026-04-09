@@ -8,6 +8,8 @@ extends Node
 @export var health_players : Health
 @export var health_bar_players : ProgressBar
 @export var health_bar_enemy : ProgressBar
+@export var word_database : WordDatabase
+@export var labels : Array[Label]
 
 
 func _ready() -> void:
@@ -30,16 +32,35 @@ func init() -> void:
 
 func combat_loop():
 	while true:
+		refresh_words()
 		await get_tree().create_timer(3.0).timeout
 		player_1.attack(enemy)
+		refresh_words()		
 		await get_tree().create_timer(3.0).timeout
 		player_2.attack(enemy)
+		refresh_words()
 		await get_tree().create_timer(3.0).timeout
+		refresh_words()
 		var rand = randf()
 		if rand <= 0.5:
 			enemy.attack(player_1)
 		else:
 			enemy.attack(player_2)
+
+
+func refresh_words():
+	print(word_database.database.size())
+	print(word_database.database[0])
+	var word_1 = word_database.database.pick_random()
+	var word_2 = word_database.database.pick_random()
+	var word_3 = word_database.database.pick_random()
+	var word_4 = word_1
+
+	labels[0].text = word_1.english
+	labels[1].text = word_2.polish
+	labels[2].text = word_3.lithuanian
+	labels[3].text = word_4.polish
+	
 
 
 func _on_enemy_health_changed(previous: int, current: int, max: int) -> void:

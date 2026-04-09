@@ -1,0 +1,704 @@
+[gd_resource type="Resource" script_class="WordDatabase" format=3 uid="uid://ce6ia2ly2sjhw"]
+
+[ext_resource type="Script" uid="uid://b8ti5yivqvkrl" path="res://scripts/word/word.gd" id="1_b7pev"]
+[ext_resource type="Script" uid="uid://d0pyx27hk5wpc" path="res://scripts/word/word_database.gd" id="2_ouhy3"]
+
+[sub_resource type="Resource" id="Resource_b7pev"]
+script = ExtResource("1_b7pev")
+english = "Small (m)"
+polish = "mały"
+lithuanian = "mažas"
+
+[sub_resource type="Resource" id="Resource_ouhy3"]
+script = ExtResource("1_b7pev")
+english = "Small (f)"
+polish = "mała"
+lithuanian = "maža"
+
+[sub_resource type="Resource" id="Resource_he84d"]
+script = ExtResource("1_b7pev")
+english = "Big (m)"
+polish = "duży"
+lithuanian = "didelis"
+
+[sub_resource type="Resource" id="Resource_hwo0a"]
+script = ExtResource("1_b7pev")
+english = "Big (f)"
+polish = "duża"
+lithuanian = "didelė"
+
+[sub_resource type="Resource" id="Resource_1gr72"]
+script = ExtResource("1_b7pev")
+english = "Beautiful (m)"
+polish = "piękny"
+lithuanian = "gražus"
+
+[sub_resource type="Resource" id="Resource_12x2l"]
+script = ExtResource("1_b7pev")
+english = "Beautiful (f)"
+polish = "piękna"
+lithuanian = "graži"
+
+[sub_resource type="Resource" id="Resource_e4nj8"]
+script = ExtResource("1_b7pev")
+english = "Good (m)"
+polish = "dobry"
+lithuanian = "geras"
+
+[sub_resource type="Resource" id="Resource_qehmf"]
+script = ExtResource("1_b7pev")
+english = "Good (f)"
+polish = "dobra"
+lithuanian = "gera"
+
+[sub_resource type="Resource" id="Resource_mq7um"]
+script = ExtResource("1_b7pev")
+english = "Bad (m)"
+polish = "zły"
+lithuanian = "blogas"
+
+[sub_resource type="Resource" id="Resource_c5s4b"]
+script = ExtResource("1_b7pev")
+english = "Bad (f)"
+polish = "zła"
+lithuanian = "bloga"
+
+[sub_resource type="Resource" id="Resource_tw7w6"]
+script = ExtResource("1_b7pev")
+english = "New (m)"
+polish = "nowy"
+lithuanian = "naujas"
+
+[sub_resource type="Resource" id="Resource_erb2g"]
+script = ExtResource("1_b7pev")
+english = "New (f)"
+polish = "nowa"
+lithuanian = "nauja"
+
+[sub_resource type="Resource" id="Resource_8hlfh"]
+script = ExtResource("1_b7pev")
+english = "Old (m)"
+polish = "stary"
+lithuanian = "senas"
+
+[sub_resource type="Resource" id="Resource_r2etu"]
+script = ExtResource("1_b7pev")
+english = "Old (f)"
+polish = "stara"
+lithuanian = "sena"
+
+[sub_resource type="Resource" id="Resource_m7hbu"]
+script = ExtResource("1_b7pev")
+english = "Hot (m)"
+polish = "gorący"
+lithuanian = "karštas"
+
+[sub_resource type="Resource" id="Resource_2kvo5"]
+script = ExtResource("1_b7pev")
+english = "Hot (f)"
+polish = "gorąca"
+lithuanian = "karšta"
+
+[sub_resource type="Resource" id="Resource_g5l3x"]
+script = ExtResource("1_b7pev")
+english = "Cold (m)"
+polish = "zimny"
+lithuanian = "šaltas"
+
+[sub_resource type="Resource" id="Resource_xbsw1"]
+script = ExtResource("1_b7pev")
+english = "Cold (f)"
+polish = "zimna"
+lithuanian = "šalta"
+
+[sub_resource type="Resource" id="Resource_l7273"]
+script = ExtResource("1_b7pev")
+english = "Tall (m)"
+polish = "wysoki"
+lithuanian = "aukštas"
+
+[sub_resource type="Resource" id="Resource_k4a0w"]
+script = ExtResource("1_b7pev")
+english = "Tall (f)"
+polish = "wysoka"
+lithuanian = "aukšta"
+
+[sub_resource type="Resource" id="Resource_3e3xb"]
+script = ExtResource("1_b7pev")
+english = "Short (m)"
+polish = "krótki"
+lithuanian = "trumpas"
+
+[sub_resource type="Resource" id="Resource_il0bk"]
+script = ExtResource("1_b7pev")
+english = "Short (f)"
+polish = "krótka"
+lithuanian = "trumpa"
+
+[sub_resource type="Resource" id="Resource_llxwc"]
+script = ExtResource("1_b7pev")
+english = "Fast (m)"
+polish = "szybki"
+lithuanian = "greitas"
+
+[sub_resource type="Resource" id="Resource_ljygt"]
+script = ExtResource("1_b7pev")
+english = "Fast (f)"
+polish = "szybka"
+lithuanian = "greita"
+
+[sub_resource type="Resource" id="Resource_fkj0o"]
+script = ExtResource("1_b7pev")
+english = "Slow (m)"
+polish = "wolny"
+lithuanian = "lėtas"
+
+[sub_resource type="Resource" id="Resource_dqnto"]
+script = ExtResource("1_b7pev")
+english = "Slow (f)"
+polish = "wolna"
+lithuanian = "lėta"
+
+[sub_resource type="Resource" id="Resource_ok751"]
+script = ExtResource("1_b7pev")
+english = "Happy (m)"
+polish = "szczęśliwy"
+lithuanian = "laimingas"
+
+[sub_resource type="Resource" id="Resource_s05ga"]
+script = ExtResource("1_b7pev")
+english = "Happy (f)"
+polish = "szczęśliwa"
+lithuanian = "laiminga"
+
+[sub_resource type="Resource" id="Resource_ldg35"]
+script = ExtResource("1_b7pev")
+english = "Sad (m)"
+polish = "smutny"
+lithuanian = "liūdnas"
+
+[sub_resource type="Resource" id="Resource_ht1d3"]
+script = ExtResource("1_b7pev")
+english = "Sad (f)"
+polish = "smutna"
+lithuanian = "liūdna"
+
+[sub_resource type="Resource" id="Resource_qhffu"]
+script = ExtResource("1_b7pev")
+english = "Young (m)"
+polish = "młody"
+lithuanian = "jaunas"
+
+[sub_resource type="Resource" id="Resource_cd7ai"]
+script = ExtResource("1_b7pev")
+english = "Young (f)"
+polish = "młoda"
+lithuanian = "jauna"
+
+[sub_resource type="Resource" id="Resource_hrgs4"]
+script = ExtResource("1_b7pev")
+english = "Cheap (m)"
+polish = "tani"
+lithuanian = "pigus"
+
+[sub_resource type="Resource" id="Resource_lscu0"]
+script = ExtResource("1_b7pev")
+english = "Cheap (f)"
+polish = "tania"
+lithuanian = "pigi"
+
+[sub_resource type="Resource" id="Resource_s0ayo"]
+script = ExtResource("1_b7pev")
+english = "Expensive (m)"
+polish = "drogi"
+lithuanian = "brangus"
+
+[sub_resource type="Resource" id="Resource_athak"]
+script = ExtResource("1_b7pev")
+english = "Expensive (f)"
+polish = "droga"
+lithuanian = "brangi"
+
+[sub_resource type="Resource" id="Resource_dq08q"]
+script = ExtResource("1_b7pev")
+english = "Easy (m)"
+polish = "łatwy"
+lithuanian = "lengvas"
+
+[sub_resource type="Resource" id="Resource_jwpu3"]
+script = ExtResource("1_b7pev")
+english = "Easy (f)"
+polish = "łatwa"
+lithuanian = "lengva"
+
+[sub_resource type="Resource" id="Resource_m3nwo"]
+script = ExtResource("1_b7pev")
+english = "Hard (m)"
+polish = "trudny"
+lithuanian = "sunkus"
+
+[sub_resource type="Resource" id="Resource_ijwkg"]
+script = ExtResource("1_b7pev")
+english = "Hard (f)"
+polish = "trudna"
+lithuanian = "sunki"
+
+[sub_resource type="Resource" id="Resource_bhaij"]
+script = ExtResource("1_b7pev")
+english = "Man"
+polish = "mężczyzna"
+lithuanian = "vyras"
+
+[sub_resource type="Resource" id="Resource_xyqrx"]
+script = ExtResource("1_b7pev")
+english = "Woman"
+polish = "kobieta"
+lithuanian = "moteris"
+
+[sub_resource type="Resource" id="Resource_cwp3y"]
+script = ExtResource("1_b7pev")
+english = "Child"
+polish = "dziecko"
+lithuanian = "vaikas"
+
+[sub_resource type="Resource" id="Resource_wh8pa"]
+script = ExtResource("1_b7pev")
+english = "Father"
+polish = "ojciec"
+lithuanian = "tėvas"
+
+[sub_resource type="Resource" id="Resource_ylxsd"]
+script = ExtResource("1_b7pev")
+english = "Mother"
+polish = "matka"
+lithuanian = "mama"
+
+[sub_resource type="Resource" id="Resource_62og3"]
+script = ExtResource("1_b7pev")
+english = "Brother"
+polish = "brat"
+lithuanian = "brolis"
+
+[sub_resource type="Resource" id="Resource_2eeye"]
+script = ExtResource("1_b7pev")
+english = "Sister"
+polish = "siostra"
+lithuanian = "sesuo"
+
+[sub_resource type="Resource" id="Resource_swvb7"]
+script = ExtResource("1_b7pev")
+english = "Friend (m)"
+polish = "przyjaciel"
+lithuanian = "draugas"
+
+[sub_resource type="Resource" id="Resource_x4xav"]
+script = ExtResource("1_b7pev")
+english = "Friend (f)"
+polish = "przyjaciółka"
+lithuanian = "draugė"
+
+[sub_resource type="Resource" id="Resource_wm404"]
+script = ExtResource("1_b7pev")
+english = "Teacher (m)"
+polish = "nauczyciel"
+lithuanian = "mokytojas"
+
+[sub_resource type="Resource" id="Resource_op6em"]
+script = ExtResource("1_b7pev")
+english = "Teacher (f)"
+polish = "nauczycielka"
+lithuanian = "mokytoja"
+
+[sub_resource type="Resource" id="Resource_h0pxf"]
+script = ExtResource("1_b7pev")
+english = "Water"
+polish = "woda"
+lithuanian = "vanduo"
+
+[sub_resource type="Resource" id="Resource_vgu6j"]
+script = ExtResource("1_b7pev")
+english = "Bread"
+polish = "chleb"
+lithuanian = "duona"
+
+[sub_resource type="Resource" id="Resource_xiffk"]
+script = ExtResource("1_b7pev")
+english = "Milk"
+polish = "mleko"
+lithuanian = "pienas"
+
+[sub_resource type="Resource" id="Resource_1j78s"]
+script = ExtResource("1_b7pev")
+english = "Coffee"
+polish = "kawa"
+lithuanian = "kava"
+
+[sub_resource type="Resource" id="Resource_hd02r"]
+script = ExtResource("1_b7pev")
+english = "Tea"
+polish = "herbata"
+lithuanian = "arbata"
+
+[sub_resource type="Resource" id="Resource_hndtt"]
+script = ExtResource("1_b7pev")
+english = "Apple"
+polish = "jabłko"
+lithuanian = "obuolys"
+
+[sub_resource type="Resource" id="Resource_67tyt"]
+script = ExtResource("1_b7pev")
+english = "House"
+polish = "dom"
+lithuanian = "namas"
+
+[sub_resource type="Resource" id="Resource_ugu3c"]
+script = ExtResource("1_b7pev")
+english = "Room"
+polish = "pokój"
+lithuanian = "kambarys"
+
+[sub_resource type="Resource" id="Resource_ui0ol"]
+script = ExtResource("1_b7pev")
+english = "Table"
+polish = "stół"
+lithuanian = "stalas"
+
+[sub_resource type="Resource" id="Resource_kt64u"]
+script = ExtResource("1_b7pev")
+english = "Chair"
+polish = "krzesło"
+lithuanian = "kėdė"
+
+[sub_resource type="Resource" id="Resource_ed1xx"]
+script = ExtResource("1_b7pev")
+english = "Window"
+polish = "okno"
+lithuanian = "langas"
+
+[sub_resource type="Resource" id="Resource_art83"]
+script = ExtResource("1_b7pev")
+english = "Door"
+polish = "drzwi"
+lithuanian = "durys"
+
+[sub_resource type="Resource" id="Resource_p014j"]
+script = ExtResource("1_b7pev")
+english = "Book"
+polish = "książka"
+lithuanian = "knyga"
+
+[sub_resource type="Resource" id="Resource_8jp64"]
+script = ExtResource("1_b7pev")
+english = "Pen"
+polish = "długopis"
+lithuanian = "rašiklis"
+
+[sub_resource type="Resource" id="Resource_juhnn"]
+script = ExtResource("1_b7pev")
+english = "City"
+polish = "miasto"
+lithuanian = "miestas"
+
+[sub_resource type="Resource" id="Resource_lrlco"]
+script = ExtResource("1_b7pev")
+english = "Street"
+polish = "ulica"
+lithuanian = "gatvė"
+
+[sub_resource type="Resource" id="Resource_yftou"]
+script = ExtResource("1_b7pev")
+english = "Car"
+polish = "samochód"
+lithuanian = "automobilis"
+
+[sub_resource type="Resource" id="Resource_elm34"]
+script = ExtResource("1_b7pev")
+english = "Sun"
+polish = "słońce"
+lithuanian = "saulė"
+
+[sub_resource type="Resource" id="Resource_gkwn0"]
+script = ExtResource("1_b7pev")
+english = "Moon"
+polish = "księżyc"
+lithuanian = "mėnulis"
+
+[sub_resource type="Resource" id="Resource_mp6kv"]
+script = ExtResource("1_b7pev")
+english = "Star"
+polish = "gwiazda"
+lithuanian = "žvaigždė"
+
+[sub_resource type="Resource" id="Resource_bixcw"]
+script = ExtResource("1_b7pev")
+english = "Sky"
+polish = "niebo"
+lithuanian = "dangus"
+
+[sub_resource type="Resource" id="Resource_e2as3"]
+script = ExtResource("1_b7pev")
+english = "Tree"
+polish = "drzewo"
+lithuanian = "medis"
+
+[sub_resource type="Resource" id="Resource_2rp47"]
+script = ExtResource("1_b7pev")
+english = "Flower"
+polish = "kwiat"
+lithuanian = "gėlė"
+
+[sub_resource type="Resource" id="Resource_wfl47"]
+script = ExtResource("1_b7pev")
+english = "Dog"
+polish = "pies"
+lithuanian = "šuo"
+
+[sub_resource type="Resource" id="Resource_6m8fh"]
+script = ExtResource("1_b7pev")
+english = "Cat"
+polish = "kot"
+lithuanian = "katinas"
+
+[sub_resource type="Resource" id="Resource_qrbup"]
+script = ExtResource("1_b7pev")
+english = "Bird"
+polish = "ptak"
+lithuanian = "paukštis"
+
+[sub_resource type="Resource" id="Resource_w4y8o"]
+script = ExtResource("1_b7pev")
+english = "Day"
+polish = "dzień"
+lithuanian = "diena"
+
+[sub_resource type="Resource" id="Resource_jon4s"]
+script = ExtResource("1_b7pev")
+english = "Night"
+polish = "noc"
+lithuanian = "naktis"
+
+[sub_resource type="Resource" id="Resource_dei7r"]
+script = ExtResource("1_b7pev")
+english = "Time"
+polish = "czas"
+lithuanian = "laikas"
+
+[sub_resource type="Resource" id="Resource_dm8dt"]
+script = ExtResource("1_b7pev")
+english = "Year"
+polish = "rok"
+lithuanian = "metai"
+
+[sub_resource type="Resource" id="Resource_v4kn3"]
+script = ExtResource("1_b7pev")
+english = "Money"
+polish = "pieniądze"
+lithuanian = "pinigai"
+
+[sub_resource type="Resource" id="Resource_kg0a0"]
+script = ExtResource("1_b7pev")
+english = "Work"
+polish = "praca"
+lithuanian = "darbas"
+
+[sub_resource type="Resource" id="Resource_if8dl"]
+script = ExtResource("1_b7pev")
+english = "School"
+polish = "szkoła"
+lithuanian = "mokykla"
+
+[sub_resource type="Resource" id="Resource_ok8jp"]
+script = ExtResource("1_b7pev")
+english = "To be"
+polish = "być"
+lithuanian = "būti"
+
+[sub_resource type="Resource" id="Resource_ujsr2"]
+script = ExtResource("1_b7pev")
+english = "To have"
+polish = "mieć"
+lithuanian = "turėti"
+
+[sub_resource type="Resource" id="Resource_xno2h"]
+script = ExtResource("1_b7pev")
+english = "To do"
+polish = "robić"
+lithuanian = "daryti"
+
+[sub_resource type="Resource" id="Resource_hslk7"]
+script = ExtResource("1_b7pev")
+english = "To say"
+polish = "mówić"
+lithuanian = "sakyti"
+
+[sub_resource type="Resource" id="Resource_k0tlc"]
+script = ExtResource("1_b7pev")
+english = "To go"
+polish = "iść"
+lithuanian = "eiti"
+
+[sub_resource type="Resource" id="Resource_y020q"]
+script = ExtResource("1_b7pev")
+english = "To come"
+polish = "przyjść"
+lithuanian = "ateiti"
+
+[sub_resource type="Resource" id="Resource_ft3ic"]
+script = ExtResource("1_b7pev")
+english = "To see"
+polish = "widzieć"
+lithuanian = "matyti"
+
+[sub_resource type="Resource" id="Resource_w83s5"]
+script = ExtResource("1_b7pev")
+english = "To hear"
+polish = "słyszeć"
+lithuanian = "girdėti"
+
+[sub_resource type="Resource" id="Resource_emgxg"]
+script = ExtResource("1_b7pev")
+english = "To eat"
+polish = "jeść"
+lithuanian = "valgyti"
+
+[sub_resource type="Resource" id="Resource_oq264"]
+script = ExtResource("1_b7pev")
+english = "To drink"
+polish = "pić"
+lithuanian = "gerti"
+
+[sub_resource type="Resource" id="Resource_dj4n4"]
+script = ExtResource("1_b7pev")
+english = "To sleep"
+polish = "spać"
+lithuanian = "miegoti"
+
+[sub_resource type="Resource" id="Resource_3vtn2"]
+script = ExtResource("1_b7pev")
+english = "To run"
+polish = "biegać"
+lithuanian = "bėgti"
+
+[sub_resource type="Resource" id="Resource_b1un6"]
+script = ExtResource("1_b7pev")
+english = "To write"
+polish = "pisać"
+lithuanian = "rašyti"
+
+[sub_resource type="Resource" id="Resource_o6o8t"]
+script = ExtResource("1_b7pev")
+english = "To read"
+polish = "czytać"
+lithuanian = "skaityti"
+
+[sub_resource type="Resource" id="Resource_cdpft"]
+script = ExtResource("1_b7pev")
+english = "To buy"
+polish = "kupować"
+lithuanian = "pirkti"
+
+[sub_resource type="Resource" id="Resource_ulfpb"]
+script = ExtResource("1_b7pev")
+english = "To sell"
+polish = "sprzedawać"
+lithuanian = "parduoti"
+
+[sub_resource type="Resource" id="Resource_ebyog"]
+script = ExtResource("1_b7pev")
+english = "To know"
+polish = "wiedzieć"
+lithuanian = "žinoti"
+
+[sub_resource type="Resource" id="Resource_247d0"]
+script = ExtResource("1_b7pev")
+english = "To think"
+polish = "myśleć"
+lithuanian = "galvoti"
+
+[sub_resource type="Resource" id="Resource_ihunu"]
+script = ExtResource("1_b7pev")
+english = "To love"
+polish = "kochać"
+lithuanian = "mylėti"
+
+[sub_resource type="Resource" id="Resource_5g8xx"]
+script = ExtResource("1_b7pev")
+english = "To want"
+polish = "chcieć"
+lithuanian = "norėti"
+
+[sub_resource type="Resource" id="Resource_jg58v"]
+script = ExtResource("1_b7pev")
+english = "To understand"
+polish = "rozumieć"
+lithuanian = "suprasti"
+
+[sub_resource type="Resource" id="Resource_smw5d"]
+script = ExtResource("1_b7pev")
+english = "To learn"
+polish = "uczyć się"
+lithuanian = "mokytis"
+
+[sub_resource type="Resource" id="Resource_h51dh"]
+script = ExtResource("1_b7pev")
+english = "To work"
+polish = "pracować"
+lithuanian = "dirbti"
+
+[sub_resource type="Resource" id="Resource_jvn30"]
+script = ExtResource("1_b7pev")
+english = "To wait"
+polish = "czekać"
+lithuanian = "laukti"
+
+[sub_resource type="Resource" id="Resource_8q3im"]
+script = ExtResource("1_b7pev")
+english = "To open"
+polish = "otwierać"
+lithuanian = "atidaryti"
+
+[sub_resource type="Resource" id="Resource_xgurw"]
+script = ExtResource("1_b7pev")
+english = "To close"
+polish = "zamykać"
+lithuanian = "uždaryti"
+
+[sub_resource type="Resource" id="Resource_tk264"]
+script = ExtResource("1_b7pev")
+english = "salt"
+polish = "sól"
+lithuanian = "druska"
+
+[sub_resource type="Resource" id="Resource_dbi5t"]
+script = ExtResource("1_b7pev")
+english = "need"
+polish = "potrzeba"
+lithuanian = "reikia"
+
+[sub_resource type="Resource" id="Resource_knrwx"]
+script = ExtResource("1_b7pev")
+english = "passionate"
+polish = "namiętna "
+lithuanian = "aistringa"
+
+[sub_resource type="Resource" id="Resource_nai1b"]
+script = ExtResource("1_b7pev")
+english = "attractive (m)"
+polish = "atrakcyjny"
+lithuanian = "simpatiškas"
+
+[sub_resource type="Resource" id="Resource_3iums"]
+script = ExtResource("1_b7pev")
+english = "attractive (f)"
+polish = "atrakcyjna"
+lithuanian = "simpatiška"
+
+[sub_resource type="Resource" id="Resource_iivoo"]
+script = ExtResource("1_b7pev")
+english = "allowed"
+polish = "dozwolony"
+lithuanian = "galima"
+
+[resource]
+script = ExtResource("2_ouhy3")
+database = Array[ExtResource("1_b7pev")]([SubResource("Resource_b7pev"), SubResource("Resource_ouhy3"), SubResource("Resource_he84d"), SubResource("Resource_hwo0a"), SubResource("Resource_1gr72"), SubResource("Resource_12x2l"), SubResource("Resource_e4nj8"), SubResource("Resource_qehmf"), SubResource("Resource_mq7um"), SubResource("Resource_c5s4b"), SubResource("Resource_tw7w6"), SubResource("Resource_erb2g"), SubResource("Resource_8hlfh"), SubResource("Resource_r2etu"), SubResource("Resource_m7hbu"), SubResource("Resource_2kvo5"), SubResource("Resource_g5l3x"), SubResource("Resource_xbsw1"), SubResource("Resource_l7273"), SubResource("Resource_k4a0w"), SubResource("Resource_3e3xb"), SubResource("Resource_il0bk"), SubResource("Resource_llxwc"), SubResource("Resource_ljygt"), SubResource("Resource_fkj0o"), SubResource("Resource_dqnto"), SubResource("Resource_ok751"), SubResource("Resource_s05ga"), SubResource("Resource_ldg35"), SubResource("Resource_ht1d3"), SubResource("Resource_qhffu"), SubResource("Resource_cd7ai"), SubResource("Resource_hrgs4"), SubResource("Resource_lscu0"), SubResource("Resource_s0ayo"), SubResource("Resource_athak"), SubResource("Resource_dq08q"), SubResource("Resource_jwpu3"), SubResource("Resource_m3nwo"), SubResource("Resource_ijwkg"), SubResource("Resource_bhaij"), SubResource("Resource_xyqrx"), SubResource("Resource_cwp3y"), SubResource("Resource_wh8pa"), SubResource("Resource_ylxsd"), SubResource("Resource_62og3"), SubResource("Resource_2eeye"), SubResource("Resource_swvb7"), SubResource("Resource_x4xav"), SubResource("Resource_wm404"), SubResource("Resource_op6em"), SubResource("Resource_h0pxf"), SubResource("Resource_vgu6j"), SubResource("Resource_xiffk"), SubResource("Resource_1j78s"), SubResource("Resource_hd02r"), SubResource("Resource_hndtt"), SubResource("Resource_67tyt"), SubResource("Resource_ugu3c"), SubResource("Resource_ui0ol"), SubResource("Resource_kt64u"), SubResource("Resource_ed1xx"), SubResource("Resource_art83"), SubResource("Resource_p014j"), SubResource("Resource_8jp64"), SubResource("Resource_juhnn"), SubResource("Resource_lrlco"), SubResource("Resource_yftou"), SubResource("Resource_elm34"), SubResource("Resource_gkwn0"), SubResource("Resource_mp6kv"), SubResource("Resource_bixcw"), SubResource("Resource_e2as3"), SubResource("Resource_2rp47"), SubResource("Resource_wfl47"), SubResource("Resource_6m8fh"), SubResource("Resource_qrbup"), SubResource("Resource_w4y8o"), SubResource("Resource_jon4s"), SubResource("Resource_dei7r"), SubResource("Resource_dm8dt"), SubResource("Resource_v4kn3"), SubResource("Resource_kg0a0"), SubResource("Resource_if8dl"), SubResource("Resource_ok8jp"), SubResource("Resource_ujsr2"), SubResource("Resource_xno2h"), SubResource("Resource_hslk7"), SubResource("Resource_k0tlc"), SubResource("Resource_y020q"), SubResource("Resource_ft3ic"), SubResource("Resource_w83s5"), SubResource("Resource_emgxg"), SubResource("Resource_oq264"), SubResource("Resource_dj4n4"), SubResource("Resource_3vtn2"), SubResource("Resource_b1un6"), SubResource("Resource_o6o8t"), SubResource("Resource_cdpft"), SubResource("Resource_ulfpb"), SubResource("Resource_ebyog"), SubResource("Resource_247d0"), SubResource("Resource_ihunu"), SubResource("Resource_5g8xx"), SubResource("Resource_jg58v"), SubResource("Resource_smw5d"), SubResource("Resource_h51dh"), SubResource("Resource_jvn30"), SubResource("Resource_8q3im"), SubResource("Resource_xgurw"), SubResource("Resource_tk264"), SubResource("Resource_dbi5t"), SubResource("Resource_knrwx"), SubResource("Resource_nai1b"), SubResource("Resource_3iums"), SubResource("Resource_iivoo")])

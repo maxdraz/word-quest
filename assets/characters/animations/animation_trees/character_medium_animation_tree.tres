@@ -71,8 +71,10 @@ xfade_time = 0.1
 xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xfja3"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h0qk1"]
+xfade_time = 0.1
 
 [resource]
 states/Attack/node = SubResource("AnimationNodeBlendSpace1D_my7q3")

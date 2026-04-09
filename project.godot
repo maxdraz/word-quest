@@ -24,6 +24,10 @@ window/size/window_height_override=640
 window/stretch/mode="viewport"
 window/handheld/orientation=1
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/word_database/plugin.cfg")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
