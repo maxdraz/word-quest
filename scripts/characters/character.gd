@@ -39,8 +39,20 @@ func deal_damage():
 	
 
 
-func take_damage(dmg: float):
-	health.add_health(-dmg) 
+func take_damage(dmg: float): 
+	health.add_health(-dmg)
+	if health.current <= 0:
+		die()
+	else:
+		get_hurt()
+
+
+func die() -> void:
+	var command := DieCommand.new()
+	command.execute(state_machine, self)
+
+
+func get_hurt() -> void:
 	var params = HurtStateParams.new()
 	params.character = self
 	var hurt_command = HurtCommand.new()

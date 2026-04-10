@@ -306,8 +306,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.021385, 0, -17.846746)
 [node name="Rock_2_G_Color25" parent="World/LevelForest" unique_id=1731569092 instance=ExtResource("9_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.678231, 0, -12.697914)
 
-[node name="Camera3D" type="Camera3D" parent="World" unique_id=355263786]
+[node name="CameraBase" type="Node3D" parent="World" unique_id=944389383]
 transform = Transform3D(0.86602545, -0.31600112, 0.38748324, 2.0668092e-09, 0.7749666, 0.63200223, -0.49999997, -0.5473301, 0.67114073, 13.8634615, 24.825653, 16.619917)
+
+[node name="Camera3D" type="Camera3D" parent="World/CameraBase" unique_id=355263786]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 2.9802322e-08, 0, -2.9802322e-08, 1, 0, 0, 0)
 projection = 1
 current = true
 size = 25.031
@@ -328,6 +331,7 @@ metadata/_custom_type_script = "uid://cmbit3be86ypd"
 
 [node name="HealthPlayers" type="Node" parent="GameManager" unique_id=2043469362]
 script = ExtResource("13_muem4")
+max_health = 1
 metadata/_custom_type_script = "uid://cwyfywsf5ywsj"
 
 [node name="MouseEventDetector" type="Node3D" parent="." unique_id=2074853285]
@@ -341,6 +345,6 @@ transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 1, 0
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5, 0, 3)
 
 [node name="Skeleton_Golem" parent="." unique_id=363661274 instance=ExtResource("4_836ik")]
-transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -3, 0, -13)
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -2, 0, -10)
 
 [editable path="World/LevelForest/Hill_Top_E_Center_Color22"]

@@ -85,6 +85,8 @@ func _on_enemy_health_changed(previous: int, current: int, max: int) -> void:
 func _on_players_health_changed(previous: int, current: int, max: int) -> void:
 	health_bar_players.value = current / float(max)
 	if current <= 0:
+		player_1.die()
+		player_2.die()
 		game_over(false)
 
 
