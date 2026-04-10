@@ -16,7 +16,7 @@
 script = ExtResource("2_m3fg7")
 animation_tree = NodePath("AnimationTree")
 health = NodePath("Health")
-damage = 25
+damage = 34
 
 [node name="Rig_Large" parent="." index="0" unique_id=620820589]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -82,5 +82,4 @@ parameters/Run/blend_position = 0.0
 
 [node name="Health" type="Node" parent="." index="3" unique_id=626231116]
 script = ExtResource("11_7nexj")
-max_health = 1
 metadata/_custom_type_script = "uid://cwyfywsf5ywsj"

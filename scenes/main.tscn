@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://ce6ia2ly2sjhw" path="res://data/word_database.tres" id="13_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://cm3f352f1tn0" path="res://assets/environment/models/Color2/Grass_2_D_Singlesided_Color2.gltf" id="13_jbj1t"]
 [ext_resource type="Script" uid="uid://cwyfywsf5ywsj" path="res://scripts/combat/health.gd" id="13_muem4"]
+[ext_resource type="Script" uid="uid://d2wb8k3mx22dg" path="res://scripts/camera_base.gd" id="14_yc10j"]
 [ext_resource type="AudioStream" uid="uid://vbqclyv3tpky" path="res://assets/audio/sfx/ambient/Forest Day.ogg" id="15_jkv2x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ld40"]
@@ -160,7 +161,6 @@ layout_mode = 2
 text = "word"
 
 [node name="SummaryScreen" type="Control" parent="UI" unique_id=1440303034 node_paths=PackedStringArray("container_victory", "container_defeat", "button_play_again")]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -179,21 +179,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.62352943)
+color = Color(0, 0, 0, 0.45882353)
 
 [node name="LabelVictory" type="Label" parent="UI/SummaryScreen" unique_id=2137926427]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -124.0
-offset_top = -136.0
+offset_left = -132.0
+offset_top = 40.0
 offset_right = 128.0
-offset_bottom = -41.0
+offset_bottom = 137.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.9333334, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "Victory!"
@@ -201,19 +198,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LabelDefeat" type="Label" parent="UI/SummaryScreen" unique_id=865751144]
-visible = false
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -124.0
-offset_top = -136.0
-offset_right = 128.0
-offset_bottom = -41.0
+offset_top = 40.0
+offset_right = 135.0
+offset_bottom = 135.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "You lose!"
@@ -221,11 +214,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ButtonPlayAgain" type="Button" parent="UI/SummaryScreen" unique_id=662953129]
-layout_mode = 0
-offset_left = 148.5
-offset_top = 316.5
-offset_right = 235.5
-offset_bottom = 347.5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = 264.0
+offset_right = 51.0
+offset_bottom = 295.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Play again"
 
 [node name="World" type="Node3D" parent="." unique_id=209785591]
@@ -306,8 +306,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.021385, 0, -17.846746)
 [node name="Rock_2_G_Color25" parent="World/LevelForest" unique_id=1731569092 instance=ExtResource("9_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.678231, 0, -12.697914)
 
-[node name="CameraBase" type="Node3D" parent="World" unique_id=944389383]
+[node name="CameraBase" type="Node3D" parent="World" unique_id=944389383 node_paths=PackedStringArray("camera")]
 transform = Transform3D(0.86602545, -0.31600112, 0.38748324, 2.0668092e-09, 0.7749666, 0.63200223, -0.49999997, -0.5473301, 0.67114073, 13.8634615, 24.825653, 16.619917)
+script = ExtResource("14_yc10j")
+camera = NodePath("Camera3D")
+noise_speed = 1.0
+shake_decay = 10.0
+smoothing = 1.0
+min_shake_intensity = 0.1
 
 [node name="Camera3D" type="Camera3D" parent="World/CameraBase" unique_id=355263786]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 2.9802322e-08, 0, -2.9802322e-08, 1, 0, 0, 0)
@@ -316,7 +322,7 @@ current = true
 size = 25.031
 far = 150.0
 
-[node name="GameManager" type="Node" parent="." unique_id=463078308 node_paths=PackedStringArray("player_1", "player_2", "enemy", "health_players", "health_bar_players", "health_bar_enemy", "word_minigame_screen", "summary_screen")]
+[node name="GameManager" type="Node" parent="." unique_id=463078308 node_paths=PackedStringArray("player_1", "player_2", "enemy", "health_players", "health_bar_players", "health_bar_enemy", "word_minigame_screen", "summary_screen", "camera_base")]
 script = ExtResource("1_a8y0u")
 player_1 = NodePath("../Knight")
 player_2 = NodePath("../Rogue")
@@ -327,11 +333,11 @@ health_bar_enemy = NodePath("../UI/HealthBarEneny")
 word_database = ExtResource("13_dp3eg")
 word_minigame_screen = NodePath("../UI/WordMinigameScreen")
 summary_screen = NodePath("../UI/SummaryScreen")
+camera_base = NodePath("../World/CameraBase")
 metadata/_custom_type_script = "uid://cmbit3be86ypd"
 
 [node name="HealthPlayers" type="Node" parent="GameManager" unique_id=2043469362]
 script = ExtResource("13_muem4")
-max_health = 1
 metadata/_custom_type_script = "uid://cwyfywsf5ywsj"
 
 [node name="MouseEventDetector" type="Node3D" parent="." unique_id=2074853285]

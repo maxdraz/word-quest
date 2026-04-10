@@ -11,6 +11,7 @@ extends Node
 @export var word_database : WordDatabase
 @export var word_minigame_screen : WordMinigameScreen
 @export var summary_screen : SummaryScreen
+@export var camera_base : CameraBase
 var database : Array[Word]
 var current_word : Word
 var current_language : LanguageType.Code
@@ -78,12 +79,14 @@ func _on_word_selected(word: String) -> void:
 	
 func _on_enemy_health_changed(previous: int, current: int, max: int) -> void:
 	health_bar_enemy.value = current / float(max)
+	camera_base.shake(5)
 	if current <= 0:
 		game_over(true)
 
 
 func _on_players_health_changed(previous: int, current: int, max: int) -> void:
 	health_bar_players.value = current / float(max)
+	camera_base.shake(5)
 	if current <= 0:
 		player_1.die()
 		player_2.die()
