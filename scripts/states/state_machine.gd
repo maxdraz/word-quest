@@ -4,6 +4,7 @@ extends RefCounted
 var current_state : State
 var default_state : State
 var queue : Array[State] = []
+var queue_finished : Callable
 
 func init(default_state: State):
 	self.default_state = default_state
@@ -52,6 +53,9 @@ func transition_to(state: State) -> void:
 func on_state_exit(state: State) -> void:
 	print("exited " + str(current_state.get_script()))
 	if queue.size() <= 0:
+		if queue_finished.is_valid(): 
+			queue_finished.call()
+			queue_finished = Callable()
 		transition_to(default_state)
 		return
 	transition_to(queue.pop_front())

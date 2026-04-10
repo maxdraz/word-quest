@@ -40,7 +40,7 @@ func deal_damage():
 
 
 func take_damage(dmg: float):
-	health.add_health(-damage) 
+	health.add_health(-dmg) 
 	var params = HurtStateParams.new()
 	params.character = self
 	var hurt_command = HurtCommand.new()

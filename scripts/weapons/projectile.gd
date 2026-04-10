@@ -11,7 +11,7 @@ signal finished
 func init(start: Node3D, target: Node3D) -> void:
 	self.target = target
 	global_position = start.global_position + (Vector3.UP * offset_y)
-	look_at(target.global_position + (Vector3.UP * offset_y))
+	look_at(target.global_position + (Vector3.UP * offset_y), Vector3.UP, true)
 
 
 func _process(delta: float) -> void:

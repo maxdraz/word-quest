@@ -2,7 +2,7 @@ class_name Health
 extends Node
 
 @export var max_health := 100
-var current : int
+@export var current : int
 signal changed(previous: int, new: int, max: int)
 
 func _ready():

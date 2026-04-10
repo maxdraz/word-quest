@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://cgpw33avvyaob" path="res://scenes/knight.tscn" id="2_2d37k"]
 [ext_resource type="AudioStream" uid="uid://dmkchgehclbda" path="res://assets/audio/music/09 - Battle 2.ogg" id="2_jbj1t"]
 [ext_resource type="Script" uid="uid://dbvwmbrgo7iir" path="res://scripts/mouse_event_detector.gd" id="2_tbgi4"]
+[ext_resource type="Script" uid="uid://cfvn4lipryydu" path="res://scripts/ui/word_minigame_screen.gd" id="3_0ld40"]
 [ext_resource type="PackedScene" uid="uid://cf2c84ypbj6h2" path="res://scenes/rogue.tscn" id="3_836ik"]
-[ext_resource type="PackedScene" uid="uid://dae80an42mfnp" path="res://assets/enemies/scenes/skeleton_golem.tscn" id="4_836ik"]
+[ext_resource type="PackedScene" uid="uid://dae80an42mfnp" path="res://scenes/skeleton_golem.tscn" id="4_836ik"]
+[ext_resource type="Script" uid="uid://bjytlx2bxgcrw" path="res://scripts/ui/summary_screen.gd" id="4_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://be1h4h5ume00" path="res://assets/environment/models/Color2/Rock_2_E_Color2.gltf" id="7_choun"]
 [ext_resource type="PackedScene" uid="uid://did1mq06hf4u1" path="res://assets/environment/models/Color2/Rock_2_F_Color2.gltf" id="8_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dpi0jqg5kmp3t" path="res://assets/environment/models/Color2/Rock_2_G_Color2.gltf" id="9_eb6dy"]
@@ -19,11 +21,17 @@
 [ext_resource type="Script" uid="uid://cwyfywsf5ywsj" path="res://scripts/combat/health.gd" id="13_muem4"]
 [ext_resource type="AudioStream" uid="uid://vbqclyv3tpky" path="res://assets/audio/sfx/ambient/Forest Day.ogg" id="15_jkv2x"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ld40"]
+bg_color = Color(1, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbj1t"]
-bg_color = Color(0, 0.72187865, 0.29593423, 1)
+bg_color = Color(0, 1, 0.41666675, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqmmt"]
+bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muem4"]
-bg_color = Color(0, 0.72156864, 0.29803923, 1)
+bg_color = Color(0, 1, 0.41666675, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4dbta"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -55,16 +63,23 @@ parameters/looping = true
 
 [node name="UI" type="Control" parent="." unique_id=1208741327]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
 
 [node name="HealthBarEneny" type="ProgressBar" parent="UI" unique_id=1365085017]
-layout_mode = 0
-offset_left = 16.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 40.0
 offset_top = 40.0
-offset_right = 344.0
-offset_bottom = 80.0
+offset_right = -40.0
+offset_bottom = 72.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_0ld40")
 theme_override_styles/fill = SubResource("StyleBoxFlat_jbj1t")
 max_value = 1.0
 value = 1.0
@@ -72,54 +87,146 @@ show_percentage = false
 
 [node name="HealthBarPlayers" type="ProgressBar" parent="UI" unique_id=475679107]
 layout_mode = 0
-offset_left = 16.0
+offset_left = 40.0
 offset_top = 584.0
-offset_right = 344.0
+offset_right = 320.0
 offset_bottom = 624.0
+theme_override_styles/background = SubResource("StyleBoxFlat_gqmmt")
 theme_override_styles/fill = SubResource("StyleBoxFlat_muem4")
 max_value = 1.0
 value = 1.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="UI" unique_id=1831371667]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 80.0
-offset_right = 288.0
-offset_bottom = 128.0
+[node name="WordMinigameScreen" type="Control" parent="UI" unique_id=58600441 node_paths=PackedStringArray("labelMainWord", "buttons")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_0ld40")
+labelMainWord = NodePath("ContainerMainWord/LabelMainWord")
+buttons = [NodePath("VBoxContainer/ButtonWord1"), NodePath("VBoxContainer/ButtonWord2"), NodePath("VBoxContainer/ButtonWord3")]
+
+[node name="ContainerMainWord" type="ColorRect" parent="UI/WordMinigameScreen" unique_id=1760978403]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 72.0
+offset_right = 68.0
+offset_bottom = 104.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.58431375)
+
+[node name="LabelMainWord" type="Label" parent="UI/WordMinigameScreen/ContainerMainWord" unique_id=1831371667]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Word"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="UI" unique_id=97037535]
-layout_mode = 0
-offset_left = 152.0
-offset_top = 312.0
-offset_right = 352.0
-offset_bottom = 360.0
-text = "Word"
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/WordMinigameScreen" unique_id=2104410499]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -189.0
+offset_right = -16.0
+offset_bottom = -88.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ButtonWord1" type="Button" parent="UI/WordMinigameScreen/VBoxContainer" unique_id=792876114]
+layout_mode = 2
+text = "word"
+
+[node name="ButtonWord2" type="Button" parent="UI/WordMinigameScreen/VBoxContainer" unique_id=813288959]
+layout_mode = 2
+text = "word"
+
+[node name="ButtonWord3" type="Button" parent="UI/WordMinigameScreen/VBoxContainer" unique_id=837652256]
+layout_mode = 2
+text = "word"
+
+[node name="SummaryScreen" type="Control" parent="UI" unique_id=1440303034 node_paths=PackedStringArray("container_victory", "container_defeat", "button_play_again")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_gqmmt")
+container_victory = NodePath("LabelVictory")
+container_defeat = NodePath("LabelDefeat")
+button_play_again = NodePath("ButtonPlayAgain")
+
+[node name="ColorRect" type="ColorRect" parent="UI/SummaryScreen" unique_id=746816035]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.62352943)
+
+[node name="LabelVictory" type="Label" parent="UI/SummaryScreen" unique_id=2137926427]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -136.0
+offset_right = 128.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.9333334, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Victory!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="UI" unique_id=394379556]
-layout_mode = 0
-offset_left = 160.0
-offset_top = 392.0
-offset_right = 360.0
-offset_bottom = 440.0
-text = "Word"
+[node name="LabelDefeat" type="Label" parent="UI/SummaryScreen" unique_id=865751144]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -136.0
+offset_right = 128.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "You lose!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="UI" unique_id=1655624958]
+[node name="ButtonPlayAgain" type="Button" parent="UI/SummaryScreen" unique_id=662953129]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 472.0
-offset_right = 344.0
-offset_bottom = 520.0
-text = "Word"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 148.5
+offset_top = 316.5
+offset_right = 235.5
+offset_bottom = 347.5
+text = "Play again"
 
 [node name="World" type="Node3D" parent="." unique_id=209785591]
 
@@ -206,7 +313,7 @@ current = true
 size = 25.031
 far = 150.0
 
-[node name="GameManager" type="Node" parent="." unique_id=463078308 node_paths=PackedStringArray("player_1", "player_2", "enemy", "health_players", "health_bar_players", "health_bar_enemy", "labels")]
+[node name="GameManager" type="Node" parent="." unique_id=463078308 node_paths=PackedStringArray("player_1", "player_2", "enemy", "health_players", "health_bar_players", "health_bar_enemy", "word_minigame_screen", "summary_screen")]
 script = ExtResource("1_a8y0u")
 player_1 = NodePath("../Knight")
 player_2 = NodePath("../Rogue")
@@ -215,7 +322,8 @@ health_players = NodePath("HealthPlayers")
 health_bar_players = NodePath("../UI/HealthBarPlayers")
 health_bar_enemy = NodePath("../UI/HealthBarEneny")
 word_database = ExtResource("13_dp3eg")
-labels = [NodePath("../UI/Label"), NodePath("../UI/Label2"), NodePath("../UI/Label3"), NodePath("../UI/Label4")]
+word_minigame_screen = NodePath("../UI/WordMinigameScreen")
+summary_screen = NodePath("../UI/SummaryScreen")
 metadata/_custom_type_script = "uid://cmbit3be86ypd"
 
 [node name="HealthPlayers" type="Node" parent="GameManager" unique_id=2043469362]
@@ -234,6 +342,5 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5, 0
 
 [node name="Skeleton_Golem" parent="." unique_id=363661274 instance=ExtResource("4_836ik")]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -3, 0, -13)
-fighting_style = 0
 
 [editable path="World/LevelForest/Hill_Top_E_Center_Color22"]

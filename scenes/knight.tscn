@@ -18,7 +18,7 @@
 script = ExtResource("2_uy4cp")
 animation_tree = NodePath("AnimationTree")
 health = NodePath("Health")
-damage = 10
+damage = 15
 
 [node name="Skeleton3D" parent="Rig_Medium" parent_id_path=PackedInt32Array(1532997492) index="0" unique_id=2060353083]
 bones/1/position = Vector3(0, 0.42911592, 0)
