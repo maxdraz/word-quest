@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cf2c84ypbj6h2" path="res://scenes/rogue.tscn" id="3_836ik"]
 [ext_resource type="PackedScene" uid="uid://dae80an42mfnp" path="res://scenes/skeleton_golem.tscn" id="4_836ik"]
 [ext_resource type="Script" uid="uid://bjytlx2bxgcrw" path="res://scripts/ui/summary_screen.gd" id="4_gqmmt"]
+[ext_resource type="AudioStream" uid="uid://fpax8rktcw55" path="res://assets/audio/sfx/ui/African4.ogg" id="4_jscy8"]
+[ext_resource type="AudioStream" uid="uid://dve50cna87252" path="res://assets/audio/sfx/ui/Retro11.ogg" id="5_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://be1h4h5ume00" path="res://assets/environment/models/Color2/Rock_2_E_Color2.gltf" id="7_choun"]
 [ext_resource type="PackedScene" uid="uid://did1mq06hf4u1" path="res://assets/environment/models/Color2/Rock_2_F_Color2.gltf" id="8_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dpi0jqg5kmp3t" path="res://assets/environment/models/Color2/Rock_2_G_Color2.gltf" id="9_eb6dy"]
@@ -56,7 +58,7 @@ autoplay = true
 bus = &"Ambience"
 parameters/looping = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1267315000]
+[node name="Music" type="AudioStreamPlayer" parent="Audio" unique_id=1267315000]
 stream = ExtResource("2_jbj1t")
 autoplay = true
 bus = &"Music"
@@ -98,7 +100,7 @@ max_value = 1.0
 value = 1.0
 show_percentage = false
 
-[node name="WordMinigameScreen" type="Control" parent="UI" unique_id=58600441 node_paths=PackedStringArray("labelMainWord", "buttons")]
+[node name="WordMinigameScreen" type="Control" parent="UI" unique_id=58600441 node_paths=PackedStringArray("labelMainWord", "buttons", "correct_sfx", "incorrect_sfx")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -108,6 +110,8 @@ grow_vertical = 2
 script = ExtResource("3_0ld40")
 labelMainWord = NodePath("ContainerMainWord/LabelMainWord")
 buttons = [NodePath("VBoxContainer/ButtonWord1"), NodePath("VBoxContainer/ButtonWord2"), NodePath("VBoxContainer/ButtonWord3")]
+correct_sfx = NodePath("CorrectSfx")
+incorrect_sfx = NodePath("IncorrectSfx")
 
 [node name="ContainerMainWord" type="ColorRect" parent="UI/WordMinigameScreen" unique_id=1760978403]
 layout_mode = 1
@@ -159,6 +163,12 @@ text = "word"
 [node name="ButtonWord3" type="Button" parent="UI/WordMinigameScreen/VBoxContainer" unique_id=837652256]
 layout_mode = 2
 text = "word"
+
+[node name="CorrectSfx" type="AudioStreamPlayer" parent="UI/WordMinigameScreen" unique_id=2011680605]
+stream = ExtResource("4_jscy8")
+
+[node name="IncorrectSfx" type="AudioStreamPlayer" parent="UI/WordMinigameScreen" unique_id=443615695]
+stream = ExtResource("5_pm3ni")
 
 [node name="SummaryScreen" type="Control" parent="UI" unique_id=1440303034 node_paths=PackedStringArray("container_victory", "container_defeat", "button_play_again")]
 layout_mode = 1

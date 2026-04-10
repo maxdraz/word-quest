@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1fnegg5qy2p"
+path="res://.godot/imported/Spell Impact 3.ogg-76f65069164bed233c7b637e6a21435d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/attacks/Sword Attacks Hits and Blocks/Spell Impact 3.ogg"
+dest_files=["res://.godot/imported/Spell Impact 3.ogg-76f65069164bed233c7b637e6a21435d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

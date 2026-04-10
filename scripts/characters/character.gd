@@ -13,6 +13,8 @@ enum FightingStyle
 @export var health : Health
 @export var damage := 50
 @export var projectile_scene : PackedScene
+@export var deal_damage_sfx : AudioStream
+@export var audio_stream_player : AudioStreamPlayer
 var animation_state_machine : AnimationNodeStateMachinePlayback
 var state_machine := StateMachine.new()
 var current_target : Character
@@ -35,11 +37,13 @@ func _physics_process(delta: float) -> void:
 
 func deal_damage():
 	if !current_target: return
+	audio_stream_player.stream = deal_damage_sfx
+	audio_stream_player.play()
 	current_target.take_damage(damage)
 	
 
 
-func take_damage(dmg: float): 
+func take_damage(dmg: float):
 	health.add_health(-dmg)
 	if health.current <= 0:
 		die()
