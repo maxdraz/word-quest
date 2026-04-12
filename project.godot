@@ -10,10 +10,15 @@ config_version=5
 
 [application]
 
-config/name="word-quest"
+config/name="Word Quest"
 run/main_scene="uid://bwoubvlofldk8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
+boot_splash/show_image=false
+
+[audio]
+
+buses/default_bus_layout="uid://bjulfc1rueuqo"
 
 [display]
 

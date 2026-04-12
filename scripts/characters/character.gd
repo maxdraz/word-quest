@@ -14,6 +14,7 @@ enum FightingStyle
 @export var damage := 50
 @export var projectile_scene : PackedScene
 @export var deal_damage_sfx : AudioStream
+@export var deal_damage_vfx_scene : PackedScene
 @export var audio_stream_player : AudioStreamPlayer
 var animation_state_machine : AnimationNodeStateMachinePlayback
 var state_machine := StateMachine.new()
@@ -37,11 +38,17 @@ func _physics_process(delta: float) -> void:
 
 func deal_damage():
 	if !current_target: return
+	current_target.take_damage(damage)
 	audio_stream_player.stream = deal_damage_sfx
 	audio_stream_player.play()
-	current_target.take_damage(damage)
+	var deal_damage_vfx = deal_damage_vfx_scene.instantiate() as GPUParticles3D
+	get_tree().current_scene.add_child(deal_damage_vfx)
+	var to_target = global_position.direction_to(current_target.global_position)
+	deal_damage_vfx.global_position = current_target.global_position - (to_target * 2) + (Vector3.UP * 2)
+	deal_damage_vfx.emitting = true
+	await get_tree().create_timer(deal_damage_vfx.lifetime).timeout
+	deal_damage_vfx.free()
 	
-
 
 func take_damage(dmg: float):
 	health.add_health(-dmg)

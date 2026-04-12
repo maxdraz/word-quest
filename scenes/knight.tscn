@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bm00800pa02h6" path="res://scenes/shield_badge.tscn" id="3_w8y5l"]
 [ext_resource type="AnimationLibrary" uid="uid://c7le5c3fjsvq0" path="res://assets/characters/animations/libraries/character_medium_combat_melee.res" id="4_00icb"]
 [ext_resource type="PackedScene" uid="uid://d10hf8rlm60md" path="res://scenes/sword_2h.tscn" id="4_nw3uw"]
+[ext_resource type="PackedScene" uid="uid://b2tg71sbr535w" path="res://scenes/hit_vfx.tscn" id="4_oi1vv"]
 [ext_resource type="AnimationLibrary" uid="uid://decegd3wdodvy" path="res://assets/characters/animations/libraries/character_medium_combat_ranged.res" id="5_my7q3"]
 [ext_resource type="AnimationLibrary" uid="uid://cibehop74ves0" path="res://assets/characters/animations/libraries/character_medium_movement_advanced.res" id="6_6htur"]
 [ext_resource type="AnimationLibrary" uid="uid://cuus8gc3mw5av" path="res://assets/characters/animations/libraries/character_medium_simulation.res" id="7_l85tn"]
@@ -21,6 +22,7 @@ animation_tree = NodePath("AnimationTree")
 health = NodePath("Health")
 damage = 15
 deal_damage_sfx = ExtResource("3_c7bgd")
+deal_damage_vfx_scene = ExtResource("4_oi1vv")
 audio_stream_player = NodePath("AudioStreamPlayer")
 
 [node name="LeftHand" type="BoneAttachment3D" parent="Rig_Medium/Skeleton3D" parent_id_path=PackedInt32Array(2060353083) index="9" unique_id=321720760]

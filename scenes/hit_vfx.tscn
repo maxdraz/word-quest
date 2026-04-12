@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b2tg71sbr535w"]
+
+[ext_resource type="Shader" uid="uid://ctsl7qospkp7u" path="res://shaders/particle.tres" id="1_8igd6"]
+[ext_resource type="Texture2D" uid="uid://iqotpvdoucd2" path="res://addons/kenney_particle_pack/star_06.png" id="2_8igd6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_og1vs"]
+render_priority = 0
+shader = ExtResource("1_8igd6")
+shader_parameter/Texture = ExtResource("2_8igd6")
+
+[sub_resource type="Curve" id="Curve_og1vs"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.16863906, 0.9923798), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_2wyq8"]
+curve = SubResource("Curve_og1vs")
+
+[sub_resource type="Curve" id="Curve_2wyq8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vxglm"]
+curve = SubResource("Curve_2wyq8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2wyq8"]
+angle_min = -179.99998
+angle_max = 180.00002
+gravity = Vector3(0, 0, 0)
+scale_min = 7.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_vxglm")
+alpha_curve = SubResource("CurveTexture_2wyq8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vxglm"]
+
+[node name="HitVFX" type="GPUParticles3D" unique_id=893137995]
+material_override = SubResource("ShaderMaterial_og1vs")
+emitting = false
+amount = 1
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_2wyq8")
+draw_pass_1 = SubResource("QuadMesh_vxglm")

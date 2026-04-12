@@ -8,6 +8,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://c7le5c3fjsvq0" path="res://assets/characters/animations/libraries/character_medium_combat_melee.res" id="4_7cmhr"]
 [ext_resource type="AudioStream" uid="uid://dj8r61nn8x60a" path="res://assets/audio/sfx/attacks/Bow Attacks Hits and Blocks/Bow Impact Hit 3.ogg" id="4_7gvqj"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://dejoqmt8tb5xm" path="res://assets/characters/animations/animation_trees/character_medium_animation_tree.tres" id="4_wqnpr"]
+[ext_resource type="PackedScene" uid="uid://b2tg71sbr535w" path="res://scenes/hit_vfx.tscn" id="5_6gt82"]
 [ext_resource type="AnimationLibrary" uid="uid://decegd3wdodvy" path="res://assets/characters/animations/libraries/character_medium_combat_ranged.res" id="5_8rpu3"]
 [ext_resource type="AnimationLibrary" uid="uid://cibehop74ves0" path="res://assets/characters/animations/libraries/character_medium_movement_advanced.res" id="6_jwyjw"]
 [ext_resource type="AnimationLibrary" uid="uid://cuus8gc3mw5av" path="res://assets/characters/animations/libraries/character_medium_simulation.res" id="7_lnver"]
@@ -23,6 +24,7 @@ health = NodePath("Health")
 damage = 15
 projectile_scene = ExtResource("3_gtjld")
 deal_damage_sfx = ExtResource("4_7gvqj")
+deal_damage_vfx_scene = ExtResource("5_6gt82")
 audio_stream_player = NodePath("AudioStreamPlayer")
 
 [node name="LeftHand" type="BoneAttachment3D" parent="Rig_Medium/Skeleton3D" parent_id_path=PackedInt32Array(2055229575) index="8" unique_id=547291504]
